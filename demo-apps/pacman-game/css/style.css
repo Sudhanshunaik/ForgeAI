@@ -1,0 +1,321 @@
+/* ===== CHOMP! — Neon Maze Chase ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #05070f;
+  --panel: #0b1020;
+  --panel-2: #111830;
+  --line: #22305e;
+  --text: #e8ecff;
+  --dim: #7f8bc0;
+  --teal: #46e6b4;
+  --amber: #ffd23f;
+  --blue: #4f8bff;
+  --red: #ff5544;
+  --pink: #ff5fa2;
+  --font-arcade: 'Press Start 2P', 'Courier New', monospace;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: radial-gradient(1200px 700px at 50% -10%, #0c1330 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 14px 10px 20px;
+  min-height: 100vh;
+}
+
+.arcade {
+  width: 672px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== HUD ===== */
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 14px;
+  background: rgba(11, 16, 32, 0.85);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(30, 60, 160, 0.15);
+}
+
+.hud-block { display: flex; flex-direction: column; gap: 3px; }
+
+.hud-label {
+  font-family: var(--font-arcade);
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--dim);
+}
+
+.hud-value {
+  font-family: var(--font-arcade);
+  font-size: 13px;
+  color: var(--amber);
+  min-width: 46px;
+}
+
+.logo-small {
+  font-family: var(--font-arcade);
+  font-size: 14px;
+  color: var(--teal);
+  margin-right: auto;
+  letter-spacing: 1px;
+  text-shadow: 0 0 14px rgba(70, 230, 180, 0.6);
+}
+
+.logo-small span { color: var(--amber); }
+
+.lives { display: flex; gap: 6px; align-items: center; min-height: 16px; }
+
+.life-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--teal);
+  position: relative;
+  box-shadow: 0 0 8px rgba(70, 230, 180, 0.5);
+}
+
+.life-icon::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 6px solid var(--bg);
+}
+
+.hud-buttons { display: flex; gap: 8px; margin-left: auto; }
+
+.hud-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.hud-btn:hover { border-color: var(--blue); background: #16204a; }
+.hud-btn.muted { opacity: 0.45; }
+
+/* ===== Stage ===== */
+.stage {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #070a14;
+  box-shadow: 0 10px 50px rgba(20, 50, 160, 0.25), inset 0 0 80px rgba(20, 40, 120, 0.12);
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(60, 120, 255, 0.12));
+  touch-action: none;
+}
+
+/* ===== Overlays ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 6, 14, 0.82);
+  backdrop-filter: blur(3px);
+  z-index: 10;
+  padding: 16px;
+}
+
+.overlay.visible { display: flex; }
+
+.panel {
+  text-align: center;
+  background: linear-gradient(180deg, var(--panel) 0%, #0a0f22 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 34px 40px;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(10, 30, 110, 0.5);
+  animation: pop 0.3s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+.panel.small { padding: 22px 34px; }
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.panel h1 {
+  font-family: var(--font-arcade);
+  font-size: 34px;
+  color: var(--teal);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 24px rgba(70, 230, 180, 0.55), 0 4px 0 #0c4a38;
+}
+
+.panel h1 span { color: var(--amber); }
+
+.panel h2 {
+  font-family: var(--font-arcade);
+  font-size: 15px;
+  color: var(--amber);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 16px rgba(255, 210, 63, 0.4);
+}
+
+.panel .sub {
+  font-family: var(--font-arcade);
+  font-size: 8.5px;
+  color: var(--dim);
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+.btn {
+  font-family: var(--font-arcade);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px 26px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.btn:hover { border-color: var(--blue); transform: translateY(-1px); }
+
+.btn.primary {
+  background: linear-gradient(180deg, #2bdb9f, #17b47e);
+  color: #04140d;
+  border: none;
+  box-shadow: 0 6px 0 #0c6b4a, 0 10px 30px rgba(43, 219, 159, 0.35);
+  font-size: 12px;
+}
+
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.primary:active { transform: translateY(3px); box-shadow: 0 3px 0 #0c6b4a; }
+
+.keys { margin: 18px 0 6px; font-size: 12px; color: var(--dim); line-height: 2.1; }
+
+.kbd {
+  display: inline-block;
+  font-family: var(--font-arcade);
+  font-size: 8px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin: 0 1px;
+  background: #101830;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px auto 4px;
+  max-width: 300px;
+  text-align: left;
+  font-size: 12.5px;
+  color: var(--dim);
+}
+
+.legend-item { display: flex; align-items: center; gap: 10px; }
+
+.li-dot, .li-orb, .li-spark {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.li-dot { background: #cdd6ff; width: 8px; height: 8px; margin: 0 2px; }
+.li-orb { background: var(--amber); box-shadow: 0 0 10px rgba(255, 210, 63, 0.8); }
+
+.li-spark {
+  background: var(--red);
+  border-radius: 50% 50% 20% 20%;
+  position: relative;
+}
+
+.hint {
+  font-family: var(--font-arcade);
+  font-size: 8px;
+  color: var(--dim);
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+/* ===== D-pad ===== */
+.dpad { display: none; justify-content: center; margin-top: 4px; }
+
+.dpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 58px);
+  grid-template-rows: repeat(2, 58px);
+  gap: 8px;
+}
+
+.dbtn {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.dbtn:active { background: #1a2a60; border-color: var(--blue); }
+
+.dbtn[data-dir="up"]    { grid-column: 2; grid-row: 1; }
+.dbtn[data-dir="left"]  { grid-column: 1; grid-row: 2; }
+.dbtn[data-dir="down"]  { grid-column: 2; grid-row: 2; }
+.dbtn[data-dir="right"] { grid-column: 3; grid-row: 2; }
+
+@media (pointer: coarse) {
+  .dpad { display: flex; }
+}
+
+.foot {
+  text-align: center;
+  font-size: 11px;
+  color: #4a5580;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 720px) {
+  .hud { gap: 10px; padding: 8px 10px; flex-wrap: wrap; }
+  .logo-small { font-size: 11px; }
+  .panel { padding: 24px 20px; }
+  .panel h1 { font-size: 24px; }
+  .hud-value { font-size: 11px; }
+}

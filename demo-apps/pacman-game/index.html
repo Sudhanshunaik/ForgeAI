@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CHOMP! — Maze Chase Arcade</title>
+  <meta name="description" content="CHOMP! A neon maze-chase arcade game. Eat all the dots, dodge the sparks, grab power orbs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2346e6b4'/><path d='M50 50 L100 30 L100 70 Z' fill='%2305070f'/></svg>">
+</head>
+<body>
+
+  <div class="arcade">
+    <!-- ===== HUD ===== -->
+    <header class="hud">
+      <div class="hud-block">
+        <span class="hud-label">SCORE</span>
+        <span class="hud-value" id="score">0</span>
+      </div>
+      <div class="logo-small">CHOMP<span>!</span></div>
+      <div class="hud-block">
+        <span class="hud-label">HIGH</span>
+        <span class="hud-value" id="high">0</span>
+      </div>
+      <div class="hud-block">
+        <span class="hud-label">LEVEL</span>
+        <span class="hud-value" id="level">1</span>
+      </div>
+      <div class="hud-block">
+        <span class="hud-label">LIVES</span>
+        <span class="lives" id="lives"></span>
+      </div>
+      <div class="hud-buttons">
+        <button class="hud-btn" id="btn-sound" title="Sound on/off">🔊</button>
+        <button class="hud-btn" id="btn-pause" title="Pause (P)">⏸</button>
+      </div>
+    </header>
+
+    <!-- ===== Game stage ===== -->
+    <div class="stage" id="stage">
+      <canvas id="game" width="672" height="624"></canvas>
+
+      <!-- Overlays -->
+      <div class="overlay visible" id="ov-menu">
+        <div class="panel">
+          <h1>CHOMP<span>!</span></h1>
+          <p class="sub">A NEON MAZE CHASE</p>
+          <button class="btn primary" id="btn-play">▶ PLAY</button>
+          <div class="keys">
+            <div class="key-row"><span class="kbd">↑</span><span class="kbd">←</span><span class="kbd">↓</span><span class="kbd">→</span> or <span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span> to move</div>
+            <div class="key-row"><span class="kbd">P</span> pause &nbsp;·&nbsp; <span class="kbd">M</span> mute</div>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><i class="li-dot"></i> Eat all dots</div>
+            <div class="legend-item"><i class="li-orb"></i> Power orbs make sparks edible</div>
+            <div class="legend-item"><i class="li-spark"></i> Avoid the four sparks!</div>
+          </div>
+          <p class="hint" id="menu-high">HIGH SCORE: 0</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="ov-ready">
+        <div class="panel small">
+          <h2 id="ready-title">READY!</h2>
+          <p class="sub" id="ready-sub">LEVEL 1</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="ov-paused">
+        <div class="panel small">
+          <h2>PAUSED</h2>
+          <p class="sub">PRESS P TO RESUME</p>
+          <button class="btn" id="btn-resume">RESUME</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="ov-gameover">
+        <div class="panel">
+          <h2>GAME OVER</h2>
+          <p class="sub" id="go-score">SCORE: 0</p>
+          <p class="hint" id="go-high"></p>
+          <button class="btn primary" id="btn-again">↻ PLAY AGAIN</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="ov-levelclear">
+        <div class="panel small">
+          <h2>LEVEL CLEARED!</h2>
+          <p class="sub" id="lc-next">NEXT: LEVEL 2</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Touch D-pad (visible on touch devices) ===== -->
+    <div class="dpad" id="dpad">
+      <div class="dpad-grid">
+        <button class="dbtn" data-dir="up" aria-label="Up">▲</button>
+        <button class="dbtn" data-dir="left" aria-label="Left">◀</button>
+        <button class="dbtn" data-dir="down" aria-label="Down">▼</button>
+        <button class="dbtn" data-dir="right" aria-label="Right">▶</button>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <span>CHOMP! — an original maze-chase game · swipe or use the D-pad on touch screens</span>
+    </footer>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

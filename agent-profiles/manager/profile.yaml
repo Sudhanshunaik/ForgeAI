@@ -1,0 +1,5 @@
+description: Manager / orchestrator. Decomposes incoming work and dispatches it to
+  specialist agents (researcher, backend, frontend, devops, reviewer) via 'hermes
+  -p <agent> chat -q', then verifies and integrates their results. Answers trivial
+  asks directly without fan-out.
+description_auto: false

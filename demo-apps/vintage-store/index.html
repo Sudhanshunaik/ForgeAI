@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Rétro — Curated Vintage Clothing</title>
+  <meta name="description" content="Shop curated vintage clothing — 50s swing skirts, 70s leather, 90s denim. Authentic pieces, one of a kind.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧥</text></svg>">
+</head>
+<body>
+
+  <div class="top-bar">✂ One-of-a-kind pieces · Free shipping over $150 · New drops every Friday</div>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo" onclick="window.location.reload()">Maison <em>Rétro</em></div>
+      <nav class="nav-links">
+        <a href="#" onclick="setCategory('Dresses', null); return false;">Dresses</a>
+        <a href="#" onclick="setCategory('Jackets', null); return false;">Jackets</a>
+        <a href="#" onclick="setCategory('Denim', null); return false;">Denim</a>
+        <a href="#" onclick="setCategory('Accessories', null); return false;">Accessories</a>
+      </nav>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search the collection...">
+      </div>
+      <button class="icon-btn" title="Shopping Bag" onclick="toggleCart(true)">
+        🛍 <span class="cart-count hidden" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <h1>Wear the Story</h1>
+    <p>Hand-picked vintage clothing from every era worth remembering</p>
+    <div class="divider"></div>
+  </section>
+
+  <!-- ===== Filters ===== -->
+  <div class="filters">
+    <div class="filter-row">
+      <span class="filter-label">Category</span>
+      <div id="category-filters" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Era</span>
+      <div id="era-filters" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Size</span>
+      <div id="size-filters" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+    </div>
+    <div class="filters-bottom">
+      <span class="results-count" id="results-count"></span>
+      <select class="sort-select" onchange="setSort(this.value)">
+        <option value="featured">Featured</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="name">Name: A–Z</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ===== Products ===== -->
+  <main>
+    <div class="product-grid" id="product-grid"></div>
+  </main>
+
+  <!-- ===== Cart Drawer ===== -->
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Bag</h2>
+      <button class="cart-close" onclick="toggleCart(false)">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="total-amount" id="cart-total">$0</span>
+      </div>
+      <button class="btn-checkout" onclick="openCheckout()">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ===== Modal Overlay ===== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+
+  <!-- ===== Toast ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">Maison <em>Rétro</em></div>
+        <p class="footer-tagline">
+          Curated vintage clothing, sourced from estate sales, flea markets,
+          and attics across the world. Every piece is inspected, cleaned, and
+          given a second life.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#">New Arrivals</a>
+        <a href="#">Dresses</a>
+        <a href="#">Jackets</a>
+        <a href="#">Denim</a>
+        <a href="#">Accessories</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#">Sizing Guide</a>
+        <a href="#">Condition Grades</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Sourcing Ethics</a>
+        <a href="#">Journal</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Maison Rétro · Every piece has a past — give it a future ♻️
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

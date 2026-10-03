@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoneHub — Buy Mobile Phones Online</title>
+  <meta name="description" content="Shop the latest smartphones — iPhone, Samsung, Google Pixel, OnePlus, Xiaomi. Best prices, fast shipping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo" onclick="window.location.reload()">
+        <span class="logo-icon">📱</span>
+        Phone<span>Hub</span>
+      </div>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search phones by name or brand...">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" title="Cart" onclick="toggleCart(true)">
+          🛒 <span class="cart-count hidden" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <h1>Find Your Perfect Phone</h1>
+    <p>Latest smartphones at the best prices — free shipping over $1000</p>
+  </section>
+
+  <!-- ===== Filters ===== -->
+  <div class="filters">
+    <div class="filter-group">
+      <span class="filter-label">Brand:</span>
+      <div id="brand-filters" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+    </div>
+    <div class="filter-group" id="price-filters">
+      <span class="filter-label">Price:</span>
+      <div class="filter-chip active" onclick="setPrice('All', this)">All</div>
+      <div class="filter-chip" onclick="setPrice('0-400', this)">Under $400</div>
+      <div class="filter-chip" onclick="setPrice('400-800', this)">$400–$800</div>
+      <div class="filter-chip" onclick="setPrice('800-2000', this)">$800+</div>
+    </div>
+    <select class="sort-select" onchange="setSort(this.value)">
+      <option value="featured">Featured</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="rating">Highest Rated</option>
+      <option value="name">Name: A–Z</option>
+    </select>
+  </div>
+
+  <!-- ===== Products ===== -->
+  <main>
+    <div class="product-grid" id="product-grid"></div>
+  </main>
+
+  <!-- ===== Cart Drawer ===== -->
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>🛒 Your Cart</h2>
+      <button class="cart-close" onclick="toggleCart(false)">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount" id="cart-total">$0</span>
+      </div>
+      <button class="btn-checkout" id="btn-checkout" onclick="openCheckout()">Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- ===== Modal Overlay (Product + Checkout) ===== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+
+  <!-- ===== Toast ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>📱 PhoneHub</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Stores</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#">Apple</a>
+        <a href="#">Samsung</a>
+        <a href="#">Google</a>
+        <a href="#">OnePlus</a>
+        <a href="#">Xiaomi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Returns</a>
+        <a href="#">Warranty</a>
+        <a href="#">Track Order</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Newsletter</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 PhoneHub. All rights reserved. Built with ❤️.
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

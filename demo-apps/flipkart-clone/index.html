@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shopping Site for Mobiles, Electronics, Furniture, Lifestyle & More</title>
+  <meta name="description" content="Shop for mobiles, electronics, fashion, home & furniture at the best prices. Free delivery, easy returns, top brands.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFE11B'/><text x='50' y='72' font-size='60' font-family='Arial' font-style='italic' font-weight='bold' fill='%231F4FA8' text-anchor='middle'>F</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+
+    <!-- Row 1: logo + travel + delivery location -->
+    <div class="header-top">
+      <div class="header-content">
+        <div class="logo" onclick="renderHome(); scrollTop();">
+          <span class="logo-badge"><span class="logo-text">Flipkart</span></span>
+          <span class="travel-pill" onclick="event.stopPropagation(); showToast('Travel bookings are not part of this demo')">
+            <span class="plane">✈</span> Travel
+          </span>
+        </div>
+        <div class="location" onclick="showToast('Delivery location selection is not part of this demo')">
+          <span class="loc-pin">📍</span>
+          <span class="loc-label">Location not set</span>
+          <span class="loc-action">Select delivery location ></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: search + account actions -->
+    <div class="header-mid">
+      <div class="header-content">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search for Products, Brands and More" autocomplete="off">
+          <button class="search-clear hidden" id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+        </div>
+        <div class="header-actions">
+          <button class="h-action" onclick="showToast('Login flow is not part of this demo')">
+            <span class="icon">👤</span> Login <span class="chev">▼</span>
+          </button>
+          <div class="more-wrap">
+            <button class="h-action" onclick="toggleMoreMenu(event)">
+              More <span class="chev">▼</span>
+            </button>
+            <div class="more-menu" id="more-menu">
+              <a href="#" onclick="showToast('Demo link'); return false;">🏪 Become a Seller</a>
+              <a href="#" onclick="showToast('Demo link'); return false;">🎁 Gift Cards</a>
+              <a href="#" onclick="showToast('Demo link'); return false;">📢 Advertise</a>
+              <a href="#" onclick="showToast('Demo link'); return false;">❓ Help Center</a>
+            </div>
+          </div>
+          <button class="h-action blue" onclick="toggleCart(true)">
+            <span class="icon">🛒</span> Cart
+            <span class="cart-badge hidden" id="cart-badge">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: category strip -->
+    <nav class="cat-strip">
+      <div class="cat-strip-inner" id="cat-strip"></div>
+    </nav>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main class="main" id="main"></main>
+
+  <!-- ===== Cart Drawer ===== -->
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-head">
+      <span>🛒 My Cart</span>
+      <button class="cart-close" onclick="toggleCart(false)">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="price-details">
+      <h3 id="pd-items-label">PRICE DETAILS</h3>
+      <div class="free-delivery-hint" id="free-delivery-hint"></div>
+      <div class="pd-row"><span>Price</span><span id="pd-price">₹0</span></div>
+      <div class="pd-row discount"><span>Discount</span><span id="pd-discount">− ₹0</span></div>
+      <div class="pd-row"><span>Delivery Charges</span><span id="pd-delivery">Free</span></div>
+      <div class="pd-row total"><span>Total Amount</span><span id="pd-total">₹0</span></div>
+      <button class="btn-place-order" id="btn-place-order" onclick="openCheckout()" disabled>PLACE ORDER</button>
+    </div>
+  </aside>
+
+  <!-- ===== Modal Overlay ===== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+
+  <!-- ===== Scroll to top ===== -->
+  <button class="scroll-top" id="scroll-top" onclick="scrollTop()" aria-label="Scroll to top">↑</button>
+
+  <!-- ===== Toast ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Stories</a>
+        <a href="#">Press</a>
+        <a href="#">Corporate Information</a>
+      </div>
+      <div class="footer-col">
+        <h4>Group Companies</h4>
+        <a href="#">Myntra</a>
+        <a href="#">Cleartrip</a>
+        <a href="#">Shopsy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#">Payments</a>
+        <a href="#">Shipping</a>
+        <a href="#">Cancellation & Returns</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Consumer Policy</h4>
+        <a href="#">Cancellation & Returns</a>
+        <a href="#">Terms Of Use</a>
+        <a href="#">Security</a>
+        <a href="#">Privacy</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Grievance Redressal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Mail Us</h4>
+        <div class="addr">
+          Demo E-Commerce Pvt. Ltd.,<br>
+          Buildings Alyssa, Begonia & Clove,<br>
+          Embassy Tech Village, Outer Ring Road,<br>
+          Bengaluru, 560103, Karnataka, India<br><br>
+          <span class="dim">Telephone: 044-0000 0000</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Registered Office Address</h4>
+        <div class="addr">
+          Demo E-Commerce Pvt. Ltd.,<br>
+          Buildings Alyssa, Begonia & Clove,<br>
+          Embassy Tech Village, Outer Ring Road,<br>
+          Bengaluru, 560103, Karnataka, India<br><br>
+          <span class="dim">CIN: U00000KA0000PTC000000</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-mid">
+      <div class="footer-mid-inner">
+        <div class="fm-item"><span class="fm-icon">🏪</span> Become a Seller</div>
+        <div class="fm-item"><span class="fm-icon">📢</span> Advertise</div>
+        <div class="fm-item"><span class="fm-icon">🎁</span> Gift Cards</div>
+        <div class="fm-item"><span class="fm-icon">❓</span> Help Center</div>
+        <div class="fm-item">© 2007-2026 DemoStore.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      🔒 100% Secure Payments &nbsp;|&nbsp; 🚚 Fast Delivery &nbsp;|&nbsp; ↩️ Easy Returns
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Render category strip
+    (function buildCatStrip() {
+      const strip = document.getElementById('cat-strip');
+      const cats = [
+        { id: 'foryou', icon: '🏠', label: 'For You' },
+        { id: 'fashion', icon: '👕', label: 'Fashion' },
+        { id: 'electronics', icon: '📱', label: 'Mobiles & Electronics' },
+        { id: 'beauty', icon: '🧸', label: 'Beauty & Toys' },
+        { id: 'home', icon: '🛋️', label: 'Home & Furniture' },
+      ];
+      strip.innerHTML = cats.map(c => `
+        <div class="cat-item ${c.id === 'foryou' ? 'active' : ''}" data-cat="${c.id}"
+             onclick="showCategory('${c.id}')">
+          <span class="cat-icon">${c.icon}</span>${c.label}
+        </div>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>

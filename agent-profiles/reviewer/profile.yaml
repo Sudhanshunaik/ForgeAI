@@ -1,0 +1,4 @@
+description: Code review specialist. Audits code and diffs for correctness, security,
+  regressions, and maintainability. Returns findings ranked by severity with file
+  and line references.
+description_auto: false

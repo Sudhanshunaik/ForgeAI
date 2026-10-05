@@ -1,0 +1,3427 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text",
+      "id": "txt_1",
+      "x": 60,
+      "y": 40,
+      "width": 825.6,
+      "height": 41.6,
+      "text": "HERMES AGENT: SYSTEM ARCHITECTURE & RUNTIME",
+      "fontSize": 32,
+      "fontFamily": 1,
+      "strokeColor": "#0f172a",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "HERMES AGENT: SYSTEM ARCHITECTURE & RUNTIME",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "txt_2",
+      "x": 65,
+      "y": 85,
+      "width": 982.8,
+      "height": 23.400000000000002,
+      "text": "Self-Improving AI Agent by Nous Research | Narrow Waist Core - Infinite Capability at Edges",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#475569",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "Self-Improving AI Agent by Nous Research | Narrow Waist Core - Infinite Capability at Edges",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "txt_3",
+      "x": 820,
+      "y": 45,
+      "width": 1065.6,
+      "height": 20.8,
+      "text": "Core Invariants: 1. Prompt Caching is Sacred  |  2. Core is a Narrow Waist  |  3. Profiles are Isolated Islands",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#0369a1",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "Core Invariants: 1. Prompt Caching is Sacred  |  2. Core is a Narrow Waist  |  3. Profiles are Isolated Islands",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_entry",
+      "x": 60,
+      "y": 130,
+      "width": 2360,
+      "height": 220,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e0f2fe",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 25
+    },
+    {
+      "type": "text",
+      "id": "txt_4",
+      "x": 80,
+      "y": 146,
+      "width": 360.0,
+      "height": 26.0,
+      "text": "ENTRY POINTS & USER INTERFACES",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#0284c7",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "ENTRY POINTS & USER INTERFACES",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "ep_cli",
+      "x": 90,
+      "y": 180,
+      "width": 430,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#bae6fd",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_ep_cli",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_cli",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_ep_cli",
+      "x": 100,
+      "y": 218.8,
+      "width": 410,
+      "height": 62.400000000000006,
+      "text": "Terminal CLI & REPL\n(cli.py / hermes_cli)\nPrompt Toolkit, multiline, /slash",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ep_cli",
+      "originalText": "Terminal CLI & REPL\n(cli.py / hermes_cli)\nPrompt Toolkit, multiline, /slash",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "ep_gateway",
+      "x": 550,
+      "y": 180,
+      "width": 450,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#bae6fd",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_ep_gateway",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_gw",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_ep_gateway",
+      "x": 560,
+      "y": 208.4,
+      "width": 430,
+      "height": 83.2,
+      "text": "Messaging Gateway\n(gateway/run.py)\nTelegram, Discord, Slack, WhatsApp,\nSignal, Matrix, Teams (~20 Platforms)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ep_gateway",
+      "originalText": "Messaging Gateway\n(gateway/run.py)\nTelegram, Discord, Slack, WhatsApp,\nSignal, Matrix, Teams (~20 Platforms)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "ep_desktop",
+      "x": 1030,
+      "y": 180,
+      "width": 430,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#bae6fd",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_ep_desktop",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_desk",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_ep_desktop",
+      "x": 1040,
+      "y": 208.4,
+      "width": 410,
+      "height": 83.2,
+      "text": "Desktop App & Web UI\n(apps/desktop / web / ui-tui)\nElectron, Ink React TUI, Web SPA,\ntui_gateway JSON-RPC backend",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ep_desktop",
+      "originalText": "Desktop App & Web UI\n(apps/desktop / web / ui-tui)\nElectron, Ink React TUI, Web SPA,\ntui_gateway JSON-RPC backend",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "ep_acp",
+      "x": 1490,
+      "y": 180,
+      "width": 430,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#bae6fd",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_ep_acp",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_acp",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_ep_acp",
+      "x": 1500,
+      "y": 208.4,
+      "width": 410,
+      "height": 83.2,
+      "text": "IDE Agent Protocol\n(acp_adapter/)\nACP server for VS Code,\nZed, & JetBrains IDEs",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ep_acp",
+      "originalText": "IDE Agent Protocol\n(acp_adapter/)\nACP server for VS Code,\nZed, & JetBrains IDEs",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "ep_cron",
+      "x": 1950,
+      "y": 180,
+      "width": 440,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#bae6fd",
+      "fillStyle": "solid",
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_ep_cron",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_ep_cron",
+      "x": 1960,
+      "y": 208.4,
+      "width": 420,
+      "height": 83.2,
+      "text": "Cron & Batch Runner\n(cron/ & batch_runner.py)\nNatural language cron jobs,\nplatform delivery, offline trajectories",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ep_cron",
+      "originalText": "Cron & Batch Runner\n(cron/ & batch_runner.py)\nNatural language cron jobs,\nplatform delivery, offline trajectories",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_gateway",
+      "x": 60,
+      "y": 390,
+      "width": 720,
+      "height": 580,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fef3c7",
+      "fillStyle": "solid",
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 25
+    },
+    {
+      "type": "text",
+      "id": "txt_5",
+      "x": 80,
+      "y": 406,
+      "width": 372.0,
+      "height": 26.0,
+      "text": "GATEWAY & SESSION ORCHESTRATION",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#d97706",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "GATEWAY & SESSION ORCHESTRATION",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "gw_dispatch",
+      "x": 90,
+      "y": 440,
+      "width": 660,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fde68a",
+      "fillStyle": "solid",
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_gw_dispatch",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_cli",
+          "type": "arrow"
+        },
+        {
+          "id": "a_ep_gw",
+          "type": "arrow"
+        },
+        {
+          "id": "a_gw_to_core",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_gw_dispatch",
+      "x": 100,
+      "y": 453.4,
+      "width": 640,
+      "height": 83.2,
+      "text": "Message Dispatcher & Hooks\n(gateway/run_*.py, hooks.py)\nPlatform routing, DM pairing auth,\nVoice memo transcription, Mirroring",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "gw_dispatch",
+      "originalText": "Message Dispatcher & Hooks\n(gateway/run_*.py, hooks.py)\nPlatform routing, DM pairing auth,\nVoice memo transcription, Mirroring",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "gw_session",
+      "x": 90,
+      "y": 580,
+      "width": 660,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fde68a",
+      "fillStyle": "solid",
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_gw_session",
+          "type": "text"
+        },
+        {
+          "id": "a_loop_session",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_gw_session",
+      "x": 100,
+      "y": 593.4,
+      "width": 640,
+      "height": 83.2,
+      "text": "Session Store & Lineage\n(gateway/session.py & hermes_state.py)\nSession lineage, turn logging,\nSQLite DB + FTS5 full-text search",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "gw_session",
+      "originalText": "Session Store & Lineage\n(gateway/session.py & hermes_state.py)\nSession lineage, turn logging,\nSQLite DB + FTS5 full-text search",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "gw_profile",
+      "x": 90,
+      "y": 720,
+      "width": 660,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fde68a",
+      "fillStyle": "solid",
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_gw_profile",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_gw_profile",
+      "x": 100,
+      "y": 733.4,
+      "width": 640,
+      "height": 83.2,
+      "text": "Profile Runtime Scope\n(hermes_constants.py & profiles/)\nMulti-profile isolation (HERMES_HOME)\nIsolated .env, config.yaml, & SOUL.md",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "gw_profile",
+      "originalText": "Profile Runtime Scope\n(hermes_constants.py & profiles/)\nMulti-profile isolation (HERMES_HOME)\nIsolated .env, config.yaml, & SOUL.md",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "gw_pairing",
+      "x": 90,
+      "y": 860,
+      "width": 660,
+      "height": 80,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fed7aa",
+      "fillStyle": "solid",
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_gw_pairing",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_gw_pairing",
+      "x": 100,
+      "y": 870.75,
+      "width": 640,
+      "height": 58.5,
+      "text": "Security & Pairing Barrier\nDM pairing handshake, token locks,\nrate limiting, & profile multiplexing",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "gw_pairing",
+      "originalText": "Security & Pairing Barrier\nDM pairing handshake, token locks,\nrate limiting, & profile multiplexing",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_core",
+      "x": 820,
+      "y": 390,
+      "width": 940,
+      "height": 580,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#f3e8ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 30
+    },
+    {
+      "type": "text",
+      "id": "txt_6",
+      "x": 840,
+      "y": 406,
+      "width": 504.0,
+      "height": 26.0,
+      "text": "CORE AGENT ENGINE \u2014 AIAgent (NARROW WAIST)",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "CORE AGENT ENGINE \u2014 AIAgent (NARROW WAIST)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_loop",
+      "x": 850,
+      "y": 440,
+      "width": 880,
+      "height": 100,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9d5ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_loop",
+          "type": "text"
+        },
+        {
+          "id": "a_ep_desk",
+          "type": "arrow"
+        },
+        {
+          "id": "a_ep_acp",
+          "type": "arrow"
+        },
+        {
+          "id": "a_gw_to_core",
+          "type": "arrow"
+        },
+        {
+          "id": "a_pr_to_loop",
+          "type": "arrow"
+        },
+        {
+          "id": "a_ca_to_loop",
+          "type": "arrow"
+        },
+        {
+          "id": "a_core_prov",
+          "type": "arrow"
+        },
+        {
+          "id": "a_llm_return",
+          "type": "arrow"
+        },
+        {
+          "id": "a_loop_to_to",
+          "type": "arrow"
+        },
+        {
+          "id": "a_tool_result",
+          "type": "arrow"
+        },
+        {
+          "id": "a_loop_session",
+          "type": "arrow"
+        },
+        {
+          "id": "a_loop_learn",
+          "type": "arrow"
+        },
+        {
+          "id": "a_loop_skill",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_loop",
+      "x": 860,
+      "y": 456.85,
+      "width": 860,
+      "height": 66.3,
+      "text": "AIAgent Facade & Synchronous Turn Loop\n(run_agent.py, agent/conversation_loop.py, agent/turn_*.py)\nTurns, Tool Call Parsing, Retries, Role Alternation Guard",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_loop",
+      "originalText": "AIAgent Facade & Synchronous Turn Loop\n(run_agent.py, agent/conversation_loop.py, agent/turn_*.py)\nTurns, Tool Call Parsing, Retries, Role Alternation Guard",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_prompt",
+      "x": 850,
+      "y": 570,
+      "width": 420,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9d5ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_prompt",
+          "type": "text"
+        },
+        {
+          "id": "a_pr_to_loop",
+          "type": "arrow"
+        },
+        {
+          "id": "a_flywheel",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_prompt",
+      "x": 860,
+      "y": 581.25,
+      "width": 400,
+      "height": 97.5,
+      "text": "System Prompt Builder\n(agent/prompt_builder.py)\nAssembles: Persona (SOUL.md),\nUser facts, Active skills catalog,\nCore + Session tool definitions",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_prompt",
+      "originalText": "System Prompt Builder\n(agent/prompt_builder.py)\nAssembles: Persona (SOUL.md),\nUser facts, Active skills catalog,\nCore + Session tool definitions",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_cache",
+      "x": 1300,
+      "y": 570,
+      "width": 430,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9d5ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_cache",
+          "type": "text"
+        },
+        {
+          "id": "a_ca_to_loop",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_cache",
+      "x": 1310,
+      "y": 581.25,
+      "width": 410,
+      "height": 97.5,
+      "text": "Prompt Caching Manager\n(agent/prompt_caching.py)\nByte-stable prefix caching (Anthropic)\nDeferred cache invalidation (next turn)\nPrevents cache busts & cost spikes",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_cache",
+      "originalText": "Prompt Caching Manager\n(agent/prompt_caching.py)\nByte-stable prefix caching (Anthropic)\nDeferred cache invalidation (next turn)\nPrevents cache busts & cost spikes",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_compress",
+      "x": 850,
+      "y": 720,
+      "width": 420,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9d5ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_compress",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_compress",
+      "x": 860,
+      "y": 731.25,
+      "width": 400,
+      "height": 97.5,
+      "text": "Context Engine & Compressor\n(agent/context_engine.py)\nPluggable ContextEngine ABC,\nlossy summarization near limit,\nprotects context window headroom",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_compress",
+      "originalText": "Context Engine & Compressor\n(agent/context_engine.py)\nPluggable ContextEngine ABC,\nlossy summarization near limit,\nprotects context window headroom",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_provider",
+      "x": 1300,
+      "y": 720,
+      "width": 430,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9d5ff",
+      "fillStyle": "solid",
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_provider",
+          "type": "text"
+        },
+        {
+          "id": "a_core_prov",
+          "type": "arrow"
+        },
+        {
+          "id": "a_prov_portal",
+          "type": "arrow"
+        },
+        {
+          "id": "a_prov_ext",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_provider",
+      "x": 1310,
+      "y": 731.25,
+      "width": 410,
+      "height": 97.5,
+      "text": "Runtime Provider Resolution\n(hermes_cli/runtime_provider.py)\nMaps configured model to 3 API Modes:\nchat_completions | codex_responses |\nanthropic_messages",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_provider",
+      "originalText": "Runtime Provider Resolution\n(hermes_cli/runtime_provider.py)\nMaps configured model to 3 API Modes:\nchat_completions | codex_responses |\nanthropic_messages",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "core_guard",
+      "x": 850,
+      "y": 870,
+      "width": 880,
+      "height": 70,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ddd6fe",
+      "fillStyle": "solid",
+      "strokeColor": "#6b21a8",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_core_guard",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_core_guard",
+      "x": 860,
+      "y": 885.5,
+      "width": 860,
+      "height": 39.0,
+      "text": "Turn Integrity & Alternation Guard\nStrict role alternation (User -> Assistant -> Tool) | Auxiliary LLM Client (vision / summarization)",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "core_guard",
+      "originalText": "Turn Integrity & Alternation Guard\nStrict role alternation (User -> Assistant -> Tool) | Auxiliary LLM Client (vision / summarization)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_providers",
+      "x": 1800,
+      "y": 390,
+      "width": 620,
+      "height": 580,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ffedd5",
+      "fillStyle": "solid",
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 25
+    },
+    {
+      "type": "text",
+      "id": "txt_7",
+      "x": 1820,
+      "y": 406,
+      "width": 348.0,
+      "height": 26.0,
+      "text": "MODEL PROVIDERS & NOUS PORTAL",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#ea580c",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "MODEL PROVIDERS & NOUS PORTAL",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "p_portal",
+      "x": 1830,
+      "y": 440,
+      "width": 560,
+      "height": 130,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fed7aa",
+      "fillStyle": "solid",
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_p_portal",
+          "type": "text"
+        },
+        {
+          "id": "a_prov_portal",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_p_portal",
+      "x": 1840,
+      "y": 456.25,
+      "width": 540,
+      "height": 97.5,
+      "text": "Nous Portal (Unified Subscription)\n(portal.nousresearch.com)\n- 300+ LLM models with zero key setup\n- Tool Gateway: FAL image gen, OpenAI TTS,\n  Browser Use cloud, Web search routed natively",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "p_portal",
+      "originalText": "Nous Portal (Unified Subscription)\n(portal.nousresearch.com)\n- 300+ LLM models with zero key setup\n- Tool Gateway: FAL image gen, OpenAI TTS,\n  Browser Use cloud, Web search routed natively",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "p_external",
+      "x": 1830,
+      "y": 600,
+      "width": 560,
+      "height": 190,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ffedd5",
+      "fillStyle": "solid",
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_p_external",
+          "type": "text"
+        },
+        {
+          "id": "a_prov_ext",
+          "type": "arrow"
+        },
+        {
+          "id": "a_llm_return",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_p_external",
+      "x": 1840,
+      "y": 626.75,
+      "width": 540,
+      "height": 136.5,
+      "text": "Direct Provider Integrations\n(hermes model / config.yaml)\n- Anthropic (Claude 3.7 / 3.5 Sonnet)\n- OpenAI (GPT-4o, o1, o3-mini)\n- OpenRouter (all hosted models)\n- DeepSeek, Together, Groq, Mistral\n- Local / Self-hosted: Ollama, vLLM",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "p_external",
+      "originalText": "Direct Provider Integrations\n(hermes model / config.yaml)\n- Anthropic (Claude 3.7 / 3.5 Sonnet)\n- OpenAI (GPT-4o, o1, o3-mini)\n- OpenRouter (all hosted models)\n- DeepSeek, Together, Groq, Mistral\n- Local / Self-hosted: Ollama, vLLM",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "p_aux",
+      "x": 1830,
+      "y": 820,
+      "width": 560,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fed7aa",
+      "fillStyle": "solid",
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_p_aux",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_p_aux",
+      "x": 1840,
+      "y": 850.75,
+      "width": 540,
+      "height": 58.5,
+      "text": "Auxiliary Client (agent/auxiliary_client.py)\nSide tasks: Vision evaluation, context compression,\nembedding creation without polluting main prompt",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "p_aux",
+      "originalText": "Auxiliary Client (agent/auxiliary_client.py)\nSide tasks: Vision evaluation, context compression,\nembedding creation without polluting main prompt",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_tools",
+      "x": 60,
+      "y": 1010,
+      "width": 1500,
+      "height": 740,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ecfdf5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 25
+    },
+    {
+      "type": "text",
+      "id": "txt_8",
+      "x": 80,
+      "y": 1026,
+      "width": 780.0,
+      "height": 26.0,
+      "text": "TOOL ORCHESTRATION & EXECUTION ENVIRONMENTS (CAPABILITY AT EDGES)",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#059669",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "TOOL ORCHESTRATION & EXECUTION ENVIRONMENTS (CAPABILITY AT EDGES)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "to_registry",
+      "x": 90,
+      "y": 1060,
+      "width": 680,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#a7f3d0",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_to_registry",
+          "type": "text"
+        },
+        {
+          "id": "a_loop_to_to",
+          "type": "arrow"
+        },
+        {
+          "id": "a_to_approval",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_to_registry",
+      "x": 100,
+      "y": 1066.25,
+      "width": 660,
+      "height": 97.5,
+      "text": "Tool Orchestrator & Toolsets\n(model_tools.py & toolsets.py)\n- Core Tools (_HERMES_CORE_TOOLS)\n- Session-gated toolsets (desktop_ui, project)\n- Dynamic discovery & check_fn gating (70+ tools)",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "to_registry",
+      "originalText": "Tool Orchestrator & Toolsets\n(model_tools.py & toolsets.py)\n- Core Tools (_HERMES_CORE_TOOLS)\n- Session-gated toolsets (desktop_ui, project)\n- Dynamic discovery & check_fn gating (70+ tools)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "to_approval",
+      "x": 800,
+      "y": 1060,
+      "width": 730,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#fecdd3",
+      "fillStyle": "solid",
+      "strokeColor": "#e11d48",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_to_approval",
+          "type": "text"
+        },
+        {
+          "id": "a_to_approval",
+          "type": "arrow"
+        },
+        {
+          "id": "a_app_to_term",
+          "type": "arrow"
+        },
+        {
+          "id": "a_app_to_mcp",
+          "type": "arrow"
+        },
+        {
+          "id": "a_tool_result",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_to_approval",
+      "x": 810,
+      "y": 1066.25,
+      "width": 710,
+      "height": 97.5,
+      "text": "Command Approval & Safety Gate\n(tools/approval.py)\n- Dangerous pattern detection (rm -rf, dd...)\n- Interactive CLI / Platform confirm prompts\n- Sandbox isolation & permission allowlists",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "to_approval",
+      "originalText": "Command Approval & Safety Gate\n(tools/approval.py)\n- Dangerous pattern detection (rm -rf, dd...)\n- Interactive CLI / Platform confirm prompts\n- Sandbox isolation & permission allowlists",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "txt_9",
+      "x": 90,
+      "y": 1195,
+      "width": 393.59999999999997,
+      "height": 20.8,
+      "text": "BUILT-IN TOOL CAPABILITIES (Model Tools):",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#047857",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "BUILT-IN TOOL CAPABILITIES (Model Tools):",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_term",
+      "x": 90,
+      "y": 1230,
+      "width": 220,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_term",
+          "type": "text"
+        },
+        {
+          "id": "a_app_to_term",
+          "type": "arrow"
+        },
+        {
+          "id": "a_term_to_env",
+          "type": "arrow"
+        },
+        {
+          "id": "a_term_to_modal",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_term",
+      "x": 100,
+      "y": 1244.5,
+      "width": 200,
+      "height": 91.0,
+      "text": "Terminal Tool\n(terminal_tool.py)\nShell execution,\nbackground tasks,\nPTY & ANSI strip",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_term",
+      "originalText": "Terminal Tool\n(terminal_tool.py)\nShell execution,\nbackground tasks,\nPTY & ANSI strip",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_file",
+      "x": 330,
+      "y": 1230,
+      "width": 220,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_file",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_file",
+      "x": 340,
+      "y": 1244.5,
+      "width": 200,
+      "height": 91.0,
+      "text": "File System\n(file_tools.py)\nread_file, write_file,\npatch, search_files,\nripgrep integration",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_file",
+      "originalText": "File System\n(file_tools.py)\nread_file, write_file,\npatch, search_files,\nripgrep integration",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_browser",
+      "x": 570,
+      "y": 1230,
+      "width": 230,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_browser",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_browser",
+      "x": 580,
+      "y": 1244.5,
+      "width": 210,
+      "height": 91.0,
+      "text": "Browser Automation\n(browser_tool.py)\n5 backends, Playwright,\nheadless DOM actions,\nscreenshot capture",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_browser",
+      "originalText": "Browser Automation\n(browser_tool.py)\n5 backends, Playwright,\nheadless DOM actions,\nscreenshot capture",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_web",
+      "x": 820,
+      "y": 1230,
+      "width": 220,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_web",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_web",
+      "x": 830,
+      "y": 1244.5,
+      "width": 200,
+      "height": 91.0,
+      "text": "Web Search\n(web_tools.py)\nweb_search, extract,\nNous Tool Gateway,\nDuckDuckGo / Tavily",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_web",
+      "originalText": "Web Search\n(web_tools.py)\nweb_search, extract,\nNous Tool Gateway,\nDuckDuckGo / Tavily",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_mcp",
+      "x": 1060,
+      "y": 1230,
+      "width": 220,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_mcp",
+          "type": "text"
+        },
+        {
+          "id": "a_app_to_mcp",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_mcp",
+      "x": 1070,
+      "y": 1244.5,
+      "width": 200,
+      "height": 91.0,
+      "text": "MCP Dynamic Client\n(tools/mcp_tool.py)\nModel Context Protocol\nstdio/SSE servers,\nzero core schema cost",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_mcp",
+      "originalText": "MCP Dynamic Client\n(tools/mcp_tool.py)\nModel Context Protocol\nstdio/SSE servers,\nzero core schema cost",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "t_subagent",
+      "x": 1300,
+      "y": 1230,
+      "width": 230,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d1fae5",
+      "fillStyle": "solid",
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_t_subagent",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_t_subagent",
+      "x": 1310,
+      "y": 1244.5,
+      "width": 210,
+      "height": 91.0,
+      "text": "Subagent Delegate\n(delegate_tool.py)\nSpawn isolated child\nagents for parallel\nmulti-step workflows",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "t_subagent",
+      "originalText": "Subagent Delegate\n(delegate_tool.py)\nSpawn isolated child\nagents for parallel\nmulti-step workflows",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "txt_10",
+      "x": 90,
+      "y": 1375,
+      "width": 499.2,
+      "height": 20.8,
+      "text": "7 TERMINAL EXECUTION BACKENDS (tools/environments/):",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#047857",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "7 TERMINAL EXECUTION BACKENDS (tools/environments/):",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_local",
+      "x": 90,
+      "y": 1410,
+      "width": 330,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_local",
+          "type": "text"
+        },
+        {
+          "id": "a_term_to_env",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_local",
+      "x": 100,
+      "y": 1416.25,
+      "width": 310,
+      "height": 97.5,
+      "text": "Local OS Execution\n(LocalEnvironment)\nDirect host shell,\nprocess management,\ninteractive PTY",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_local",
+      "originalText": "Local OS Execution\n(LocalEnvironment)\nDirect host shell,\nprocess management,\ninteractive PTY",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_docker",
+      "x": 440,
+      "y": 1410,
+      "width": 330,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_docker",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_docker",
+      "x": 450,
+      "y": 1416.25,
+      "width": 310,
+      "height": 97.5,
+      "text": "Docker / Singularity\n(DockerEnvironment)\nContainerized sandbox,\nfilesystem isolation,\nsecure reproducible run",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_docker",
+      "originalText": "Docker / Singularity\n(DockerEnvironment)\nContainerized sandbox,\nfilesystem isolation,\nsecure reproducible run",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_ssh",
+      "x": 790,
+      "y": 1410,
+      "width": 340,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_ssh",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_ssh",
+      "x": 800,
+      "y": 1416.25,
+      "width": 320,
+      "height": 97.5,
+      "text": "Remote SSH\n(SSHEnvironment)\nRun commands on remote\ncloud VMs, edge nodes,\nor GPU clusters",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_ssh",
+      "originalText": "Remote SSH\n(SSHEnvironment)\nRun commands on remote\ncloud VMs, edge nodes,\nor GPU clusters",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_serverless",
+      "x": 1150,
+      "y": 1410,
+      "width": 380,
+      "height": 110,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ccfbf1",
+      "fillStyle": "solid",
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_serverless",
+          "type": "text"
+        },
+        {
+          "id": "a_term_to_modal",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_serverless",
+      "x": 1160,
+      "y": 1426.0,
+      "width": 360,
+      "height": 78.0,
+      "text": "Modal & Daytona & Vercel\n(Serverless Hibernation)\nHibernates when idle \u2014 $0 cost\nWakes on demand with full state",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_serverless",
+      "originalText": "Modal & Daytona & Vercel\n(Serverless Hibernation)\nHibernates when idle \u2014 $0 cost\nWakes on demand with full state",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_sec",
+      "x": 90,
+      "y": 1550,
+      "width": 1440,
+      "height": 70,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#99f6e4",
+      "fillStyle": "solid",
+      "strokeColor": "#0f766e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_sec",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_sec",
+      "x": 100,
+      "y": 1565.5,
+      "width": 1420,
+      "height": 39.0,
+      "text": "Credential Isolation & Env Passthrough (tools/credential_files.py & env_passthrough.py)\nSafely forwards selected API keys into isolated sandboxes without leaking full host environment",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_sec",
+      "originalText": "Credential Isolation & Env Passthrough (tools/credential_files.py & env_passthrough.py)\nSafely forwards selected API keys into isolated sandboxes without leaking full host environment",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "env_plugins",
+      "x": 90,
+      "y": 1640,
+      "width": 1440,
+      "height": 80,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#a7f3d0",
+      "fillStyle": "solid",
+      "strokeColor": "#047857",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_env_plugins",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_env_plugins",
+      "x": 100,
+      "y": 1660.5,
+      "width": 1420,
+      "height": 39.0,
+      "text": "Extensibility Plugins Ecosystem (plugins/)\nmemory/ | context_engine/ | platforms/ | model-providers/ | kanban/ | image_gen/",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "env_plugins",
+      "originalText": "Extensibility Plugins Ecosystem (plugins/)\nmemory/ | context_engine/ | platforms/ | model-providers/ | kanban/ | image_gen/",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "z_learning",
+      "x": 1600,
+      "y": 1010,
+      "width": 820,
+      "height": 740,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e0e7ff",
+      "fillStyle": "solid",
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 25
+    },
+    {
+      "type": "text",
+      "id": "txt_11",
+      "x": 1620,
+      "y": 1026,
+      "width": 408.0,
+      "height": 26.0,
+      "text": "CLOSED LEARNING & PERSISTENCE LOOP",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#4338ca",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "CLOSED LEARNING & PERSISTENCE LOOP",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "m_memory",
+      "x": 1630,
+      "y": 1060,
+      "width": 760,
+      "height": 150,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#c7d2fe",
+      "fillStyle": "solid",
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_m_memory",
+          "type": "text"
+        },
+        {
+          "id": "a_loop_learn",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_m_memory",
+      "x": 1640,
+      "y": 1072.6,
+      "width": 740,
+      "height": 124.80000000000001,
+      "text": "Persistent Memory System\n(agent/memory_manager.py)\n- Curated MEMORY.md & USER.md\n- Autonomous memory nudges\n- Dialectic user modeling (Honcho)\n- Profile-scoped memory banks",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "m_memory",
+      "originalText": "Persistent Memory System\n(agent/memory_manager.py)\n- Curated MEMORY.md & USER.md\n- Autonomous memory nudges\n- Dialectic user modeling (Honcho)\n- Profile-scoped memory banks",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "m_skills",
+      "x": 1630,
+      "y": 1240,
+      "width": 760,
+      "height": 160,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#c7d2fe",
+      "fillStyle": "solid",
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_m_skills",
+          "type": "text"
+        },
+        {
+          "id": "a_loop_skill",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_m_skills",
+      "x": 1640,
+      "y": 1257.6,
+      "width": 740,
+      "height": 124.80000000000001,
+      "text": "Autonomous Skills System\n(skills/ & hermes_cli/skills_hub.py)\n- Autonomous skill creation after complex tasks\n- Skills self-improve through practical usage\n- Compatible with agentskills.io open standard\n- Skills Hub discovery & /skills slash commands",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "m_skills",
+      "originalText": "Autonomous Skills System\n(skills/ & hermes_cli/skills_hub.py)\n- Autonomous skill creation after complex tasks\n- Skills self-improve through practical usage\n- Compatible with agentskills.io open standard\n- Skills Hub discovery & /skills slash commands",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "m_recall",
+      "x": 1630,
+      "y": 1430,
+      "width": 760,
+      "height": 140,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#c7d2fe",
+      "fillStyle": "solid",
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_m_recall",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_m_recall",
+      "x": 1640,
+      "y": 1448.0,
+      "width": 740,
+      "height": 104.0,
+      "text": "Cross-Session Recall & FTS5 Search\n(hermes_state.py & hermes_state_*.py)\n- SQLite FTS5 full-text indexing of past turns\n- Semantic & keyword conversation recall\n- LLM cross-session summarization",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "m_recall",
+      "originalText": "Cross-Session Recall & FTS5 Search\n(hermes_state.py & hermes_state_*.py)\n- SQLite FTS5 full-text indexing of past turns\n- Semantic & keyword conversation recall\n- LLM cross-session summarization",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "m_loop",
+      "x": 1630,
+      "y": 1600,
+      "width": 760,
+      "height": 120,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#a5b4fc",
+      "fillStyle": "solid",
+      "strokeColor": "#3730a3",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_m_loop",
+          "type": "text"
+        },
+        {
+          "id": "a_flywheel",
+          "type": "arrow"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_m_loop",
+      "x": 1640,
+      "y": 1628.8,
+      "width": 740,
+      "height": 62.400000000000006,
+      "text": "Continuous Self-Improvement Loop\nSkills & Memories automatically feed into the System Prompt Builder\nfor future sessions, creating a cumulative learning flywheel",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "m_loop",
+      "originalText": "Continuous Self-Improvement Loop\nSkills & Memories automatically feed into the System Prompt Builder\nfor future sessions, creating a cumulative learning flywheel",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_ep_cli",
+      "x": 305,
+      "y": 320,
+      "width": 0,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          120
+        ]
+      ],
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "ep_cli",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "gw_dispatch",
+        "fixedPoint": [
+          0.33,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_ep_cli",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_ep_cli",
+      "x": 252.5,
+      "y": 368.0,
+      "width": 126.0,
+      "height": 22,
+      "text": "Command / Input",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#0284c7",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_ep_cli",
+      "originalText": "Command / Input",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_ep_gw",
+      "x": 775,
+      "y": 320,
+      "width": 255,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -255,
+          120
+        ]
+      ],
+      "strokeColor": "#0284c7",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "ep_gateway",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "gw_dispatch",
+        "fixedPoint": [
+          0.65,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_ep_gw",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_ep_gw",
+      "x": 602.0,
+      "y": 368.0,
+      "width": 109.2,
+      "height": 22,
+      "text": "Message Event",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#0284c7",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_ep_gw",
+      "originalText": "Message Event",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_ep_desk",
+      "x": 1245,
+      "y": 320,
+      "width": 0,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          120
+        ]
+      ],
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "ep_desktop",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.45,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_ep_desk",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_ep_desk",
+      "x": 1189.0,
+      "y": 368.0,
+      "width": 134.4,
+      "height": 22,
+      "text": "JSON-RPC Request",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_ep_desk",
+      "originalText": "JSON-RPC Request",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_ep_acp",
+      "x": 1705,
+      "y": 320,
+      "width": 255,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -255,
+          120
+        ]
+      ],
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "ep_acp",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.7,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_ep_acp",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_ep_acp",
+      "x": 1535.5,
+      "y": 368.0,
+      "width": 100.8,
+      "height": 22,
+      "text": "ACP Protocol",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_ep_acp",
+      "originalText": "ACP Protocol",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_gw_to_core",
+      "x": 750,
+      "y": 490,
+      "width": 100,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          0
+        ]
+      ],
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "gw_dispatch",
+        "fixedPoint": [
+          1,
+          0.45
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0,
+          0.45
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_gw_to_core",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_gw_to_core",
+      "x": 754.5,
+      "y": 478.0,
+      "width": 109.2,
+      "height": 22,
+      "text": "Spawn AIAgent",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#d97706",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_gw_to_core",
+      "originalText": "Spawn AIAgent",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_pr_to_loop",
+      "x": 1060,
+      "y": 570,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -30
+        ]
+      ],
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_prompt",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.24,
+          1
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_pr_to_loop",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_pr_to_loop",
+      "x": 1014.5,
+      "y": 543.0,
+      "width": 109.2,
+      "height": 22,
+      "text": "System Prompt",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_pr_to_loop",
+      "originalText": "System Prompt",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_ca_to_loop",
+      "x": 1515,
+      "y": 570,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -30
+        ]
+      ],
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_cache",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.76,
+          1
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_ca_to_loop",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_ca_to_loop",
+      "x": 1469.5,
+      "y": 543.0,
+      "width": 109.2,
+      "height": 22,
+      "text": "Cached Prefix",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_ca_to_loop",
+      "originalText": "Cached Prefix",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_core_prov",
+      "x": 1550,
+      "y": 540,
+      "width": 0,
+      "height": 180,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          180
+        ]
+      ],
+      "strokeColor": "#7e22ce",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.8,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_provider",
+        "fixedPoint": [
+          0.6,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_core_prov",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_core_prov",
+      "x": 1494.0,
+      "y": 618.0,
+      "width": 134.4,
+      "height": 22,
+      "text": "Resolve API Mode",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#7e22ce",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_core_prov",
+      "originalText": "Resolve API Mode",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_prov_portal",
+      "x": 1730,
+      "y": 750,
+      "width": 100,
+      "height": 240,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          -240
+        ]
+      ],
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_provider",
+        "fixedPoint": [
+          1,
+          0.25
+        ]
+      },
+      "endBinding": {
+        "elementId": "p_portal",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_prov_portal",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_prov_portal",
+      "x": 1745.0,
+      "y": 618.0,
+      "width": 84.0,
+      "height": 22,
+      "text": "Portal API",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#ea580c",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_prov_portal",
+      "originalText": "Portal API",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_prov_ext",
+      "x": 1730,
+      "y": 780,
+      "width": 100,
+      "height": 80,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          -80
+        ]
+      ],
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_provider",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "p_external",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_prov_ext",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_prov_ext",
+      "x": 1741.5,
+      "y": 728.0,
+      "width": 92.39999999999999,
+      "height": 22,
+      "text": "LLM Request",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#ea580c",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_prov_ext",
+      "originalText": "LLM Request",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_llm_return",
+      "x": 1830,
+      "y": 630,
+      "width": 100,
+      "height": 160,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -100,
+          -160
+        ]
+      ],
+      "strokeColor": "#ea580c",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "p_external",
+        "fixedPoint": [
+          0,
+          0.15
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          1,
+          0.3
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_llm_return",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_llm_return",
+      "x": 1720.5,
+      "y": 538.0,
+      "width": 142.79999999999998,
+      "height": 22,
+      "text": "Tool Calls / Text",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#ea580c",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_llm_return",
+      "originalText": "Tool Calls / Text",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_loop_to_to",
+      "x": 950,
+      "y": 540,
+      "width": 520,
+      "height": 520,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -520,
+          520
+        ]
+      ],
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.11,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "to_registry",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_loop_to_to",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_loop_to_to",
+      "x": 630.5,
+      "y": 788.0,
+      "width": 142.79999999999998,
+      "height": 22,
+      "text": "Execute Tool Call",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#059669",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_loop_to_to",
+      "originalText": "Execute Tool Call",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_to_approval",
+      "x": 770,
+      "y": 1115,
+      "width": 30,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "strokeColor": "#e11d48",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "to_registry",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "to_approval",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_to_approval",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_to_approval",
+      "x": 743.0,
+      "y": 1103.0,
+      "width": 100.8,
+      "height": 22,
+      "text": "Safety Check",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#e11d48",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_to_approval",
+      "originalText": "Safety Check",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_app_to_term",
+      "x": 850,
+      "y": 1170,
+      "width": 650,
+      "height": 60,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -650,
+          60
+        ]
+      ],
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "to_approval",
+        "fixedPoint": [
+          0.07,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "t_term",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_app_to_term",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_app_to_term",
+      "x": 497.0,
+      "y": 1188.0,
+      "width": 67.2,
+      "height": 22,
+      "text": "Approved",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#059669",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_app_to_term",
+      "originalText": "Approved",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_app_to_mcp",
+      "x": 1165,
+      "y": 1170,
+      "width": 5,
+      "height": 60,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          60
+        ]
+      ],
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "to_approval",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "t_mcp",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_app_to_mcp",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_app_to_mcp",
+      "x": 1139.5,
+      "y": 1188.0,
+      "width": 67.2,
+      "height": 22,
+      "text": "Dispatch",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#059669",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_app_to_mcp",
+      "originalText": "Dispatch",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_term_to_env",
+      "x": 200,
+      "y": 1350,
+      "width": 55,
+      "height": 60,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          55,
+          60
+        ]
+      ],
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "t_term",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "env_local",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_term_to_env",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_term_to_env",
+      "x": 189.0,
+      "y": 1368.0,
+      "width": 92.39999999999999,
+      "height": 22,
+      "text": "Exec Target",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#0d9488",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_term_to_env",
+      "originalText": "Exec Target",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_term_to_modal",
+      "x": 310,
+      "y": 1340,
+      "width": 890,
+      "height": 70,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          890,
+          70
+        ]
+      ],
+      "strokeColor": "#0d9488",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "t_term",
+        "fixedPoint": [
+          1,
+          0.9
+        ]
+      },
+      "endBinding": {
+        "elementId": "env_serverless",
+        "fixedPoint": [
+          0.15,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_term_to_modal",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_term_to_modal",
+      "x": 706.0,
+      "y": 1363.0,
+      "width": 117.6,
+      "height": 22,
+      "text": "Hibernate/Wake",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#0d9488",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_term_to_modal",
+      "originalText": "Hibernate/Wake",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_tool_result",
+      "x": 1250,
+      "y": 1060,
+      "width": 100,
+      "height": 520,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          -520
+        ]
+      ],
+      "strokeColor": "#059669",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "to_approval",
+        "fixedPoint": [
+          0.6,
+          0
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.57,
+          1
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_tool_result",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_tool_result",
+      "x": 1244.0,
+      "y": 788.0,
+      "width": 134.4,
+      "height": 22,
+      "text": "Tool Return Data",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#059669",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_tool_result",
+      "originalText": "Tool Return Data",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_loop_session",
+      "x": 850,
+      "y": 520,
+      "width": 100,
+      "height": 90,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -100,
+          90
+        ]
+      ],
+      "strokeColor": "#d97706",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0,
+          0.8
+        ]
+      },
+      "endBinding": {
+        "elementId": "gw_session",
+        "fixedPoint": [
+          1,
+          0.27
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_loop_session",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_loop_session",
+      "x": 758.0,
+      "y": 553.0,
+      "width": 100.8,
+      "height": 22,
+      "text": "Persist Turn",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#d97706",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_loop_session",
+      "originalText": "Persist Turn",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_loop_learn",
+      "x": 1730,
+      "y": 520,
+      "width": 70,
+      "height": 540,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          70,
+          540
+        ]
+      ],
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          1,
+          0.8
+        ]
+      },
+      "endBinding": {
+        "elementId": "m_memory",
+        "fixedPoint": [
+          0.22,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_loop_learn",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_loop_learn",
+      "x": 1712.5,
+      "y": 778.0,
+      "width": 126.0,
+      "height": 22,
+      "text": "Post-Task Nudge",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#4338ca",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_loop_learn",
+      "originalText": "Post-Task Nudge",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_loop_skill",
+      "x": 1680,
+      "y": 540,
+      "width": 270,
+      "height": 700,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          700
+        ]
+      ],
+      "strokeColor": "#4338ca",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "core_loop",
+        "fixedPoint": [
+          0.94,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "m_skills",
+        "fixedPoint": [
+          0.42,
+          0
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_loop_skill",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_loop_skill",
+      "x": 1727.5,
+      "y": 878.0,
+      "width": 210.0,
+      "height": 22,
+      "text": "Autonomous Skill Creation",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#4338ca",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_loop_skill",
+      "originalText": "Autonomous Skill Creation",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "a_flywheel",
+      "x": 1630,
+      "y": 1660,
+      "width": 780,
+      "height": 1030,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -780,
+          -1030
+        ]
+      ],
+      "strokeColor": "#3730a3",
+      "strokeWidth": 3,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "m_loop",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "core_prompt",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "boundElements": [
+        {
+          "id": "t_a_flywheel",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a_flywheel",
+      "x": 1044.0,
+      "y": 1133.0,
+      "width": 470.4,
+      "height": 22,
+      "text": "Cumulative Learning Flywheel (Fed to Next System Prompt)",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#3730a3",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_flywheel",
+      "originalText": "Cumulative Learning Flywheel (Fed to Next System Prompt)",
+      "autoResize": true,
+      "roughness": 1,
+      "opacity": 100
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f8f9fa",
+    "gridSize": 20
+  }
+}

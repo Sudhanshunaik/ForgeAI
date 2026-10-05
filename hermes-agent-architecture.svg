@@ -1,0 +1,423 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -10 2460 2750" width="100%" height="100%" style="background-color: #f8f9fa; font-family: 'Virgil', 'Segoe UI', system-ui, -apple-system, sans-serif;">
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#1e1e1e" />
+  </marker>
+  <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#0284c7" />
+  </marker>
+  <marker id="arrowhead-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#7e22ce" />
+  </marker>
+  <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#ea580c" />
+  </marker>
+  <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#059669" />
+  </marker>
+  <marker id="arrowhead-teal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#0d9488" />
+  </marker>
+  <marker id="arrowhead-indigo" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#3730a3" />
+  </marker>
+  <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#e11d48" />
+  </marker>
+  <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+    <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.08"/>
+  </filter>
+</defs>
+<text x="60" y="72" font-size="32" fill="#0f172a" text-anchor="start" font-weight="600">
+<tspan x="60" y="72.0">HERMES AGENT: SYSTEM ARCHITECTURE &amp; RUNTIME</tspan>
+</text>
+<text x="65" y="103" font-size="18" fill="#475569" text-anchor="start" font-weight="600">
+<tspan x="65" y="103.0">Self-Improving AI Agent by Nous Research | Narrow Waist Core - Infinite Capability at Edges</tspan>
+</text>
+<text x="820" y="61" font-size="16" fill="#0369a1" text-anchor="start" font-weight="600">
+<tspan x="820" y="61.0">Core Invariants: 1. Prompt Caching is Sacred  |  2. Core is a Narrow Waist  |  3. Profiles are Isolated Islands</tspan>
+</text>
+<rect id="z_entry" x="60" y="130" width="2360" height="220" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" stroke-dasharray="8 6" opacity="0.25"  />
+<text x="80" y="166" font-size="20" fill="#0284c7" text-anchor="start" font-weight="600">
+<tspan x="80" y="166.0">ENTRY POINTS &amp; USER INTERFACES</tspan>
+</text>
+<rect id="ep_cli" x="90" y="180" width="430" height="140" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="305.0" y="231.2" font-weight="700">Terminal CLI &amp; REPL</tspan>
+<tspan x="305.0" y="252.79999999999998">(cli.py / hermes_cli)</tspan>
+<tspan x="305.0" y="274.4">Prompt Toolkit, multiline, /slash</tspan>
+</text>
+<rect id="ep_gateway" x="550" y="180" width="450" height="140" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="775.0" y="220.4" font-weight="700">Messaging Gateway</tspan>
+<tspan x="775.0" y="242.0">(gateway/run.py)</tspan>
+<tspan x="775.0" y="263.6">Telegram, Discord, Slack, WhatsApp,</tspan>
+<tspan x="775.0" y="285.20000000000005">Signal, Matrix, Teams (~20 Platforms)</tspan>
+</text>
+<rect id="ep_desktop" x="1030" y="180" width="430" height="140" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1245.0" y="220.4" font-weight="700">Desktop App &amp; Web UI</tspan>
+<tspan x="1245.0" y="242.0">(apps/desktop / web / ui-tui)</tspan>
+<tspan x="1245.0" y="263.6">Electron, Ink React TUI, Web SPA,</tspan>
+<tspan x="1245.0" y="285.20000000000005">tui_gateway JSON-RPC backend</tspan>
+</text>
+<rect id="ep_acp" x="1490" y="180" width="430" height="140" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1705.0" y="220.4" font-weight="700">IDE Agent Protocol</tspan>
+<tspan x="1705.0" y="242.0">(acp_adapter/)</tspan>
+<tspan x="1705.0" y="263.6">ACP server for VS Code,</tspan>
+<tspan x="1705.0" y="285.20000000000005">Zed, &amp; JetBrains IDEs</tspan>
+</text>
+<rect id="ep_cron" x="1950" y="180" width="440" height="140" rx="8" fill="#bae6fd" stroke="#0284c7" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2170.0" y="220.4" font-weight="700">Cron &amp; Batch Runner</tspan>
+<tspan x="2170.0" y="242.0">(cron/ &amp; batch_runner.py)</tspan>
+<tspan x="2170.0" y="263.6">Natural language cron jobs,</tspan>
+<tspan x="2170.0" y="285.20000000000005">platform delivery, offline trajectories</tspan>
+</text>
+<rect id="z_gateway" x="60" y="390" width="720" height="580" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2" stroke-dasharray="8 6" opacity="0.25"  />
+<text x="80" y="426" font-size="20" fill="#d97706" text-anchor="start" font-weight="600">
+<tspan x="80" y="426.0">GATEWAY &amp; SESSION ORCHESTRATION</tspan>
+</text>
+<rect id="gw_dispatch" x="90" y="440" width="660" height="110" rx="8" fill="#fde68a" stroke="#d97706" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="420.0" y="465.40000000000003" font-weight="700">Message Dispatcher &amp; Hooks</tspan>
+<tspan x="420.0" y="487.00000000000006">(gateway/run_*.py, hooks.py)</tspan>
+<tspan x="420.0" y="508.6">Platform routing, DM pairing auth,</tspan>
+<tspan x="420.0" y="530.2">Voice memo transcription, Mirroring</tspan>
+</text>
+<rect id="gw_session" x="90" y="580" width="660" height="110" rx="8" fill="#fde68a" stroke="#d97706" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="420.0" y="605.4" font-weight="700">Session Store &amp; Lineage</tspan>
+<tspan x="420.0" y="627.0">(gateway/session.py &amp; hermes_state.py)</tspan>
+<tspan x="420.0" y="648.6">Session lineage, turn logging,</tspan>
+<tspan x="420.0" y="670.2">SQLite DB + FTS5 full-text search</tspan>
+</text>
+<rect id="gw_profile" x="90" y="720" width="660" height="110" rx="8" fill="#fde68a" stroke="#d97706" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="420.0" y="745.4" font-weight="700">Profile Runtime Scope</tspan>
+<tspan x="420.0" y="767.0">(hermes_constants.py &amp; profiles/)</tspan>
+<tspan x="420.0" y="788.6">Multi-profile isolation (HERMES_HOME)</tspan>
+<tspan x="420.0" y="810.2">Isolated .env, config.yaml, &amp; SOUL.md</tspan>
+</text>
+<rect id="gw_pairing" x="90" y="860" width="660" height="80" rx="8" fill="#fed7aa" stroke="#ea580c" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="420.0" y="882.375" font-weight="700">Security &amp; Pairing Barrier</tspan>
+<tspan x="420.0" y="902.625">DM pairing handshake, token locks,</tspan>
+<tspan x="420.0" y="922.875">rate limiting, &amp; profile multiplexing</tspan>
+</text>
+<rect id="z_core" x="820" y="390" width="940" height="580" rx="8" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2" stroke-dasharray="8 6" opacity="0.3"  />
+<text x="840" y="426" font-size="20" fill="#7e22ce" text-anchor="start" font-weight="600">
+<tspan x="840" y="426.0">CORE AGENT ENGINE — AIAgent (NARROW WAIST)</tspan>
+</text>
+<rect id="core_loop" x="850" y="440" width="880" height="100" rx="8" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="17" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1290.0" y="470.025" font-weight="700">AIAgent Facade &amp; Synchronous Turn Loop</tspan>
+<tspan x="1290.0" y="492.97499999999997">(run_agent.py, agent/conversation_loop.py, agent/turn_*.py)</tspan>
+<tspan x="1290.0" y="515.925">Turns, Tool Call Parsing, Retries, Role Alternation Guard</tspan>
+</text>
+<rect id="core_prompt" x="850" y="570" width="420" height="120" rx="8" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1060.0" y="592.125" font-weight="700">System Prompt Builder</tspan>
+<tspan x="1060.0" y="612.375">(agent/prompt_builder.py)</tspan>
+<tspan x="1060.0" y="632.625">Assembles: Persona (SOUL.md),</tspan>
+<tspan x="1060.0" y="652.875">User facts, Active skills catalog,</tspan>
+<tspan x="1060.0" y="673.125">Core + Session tool definitions</tspan>
+</text>
+<rect id="core_cache" x="1300" y="570" width="430" height="120" rx="8" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1515.0" y="592.125" font-weight="700">Prompt Caching Manager</tspan>
+<tspan x="1515.0" y="612.375">(agent/prompt_caching.py)</tspan>
+<tspan x="1515.0" y="632.625">Byte-stable prefix caching (Anthropic)</tspan>
+<tspan x="1515.0" y="652.875">Deferred cache invalidation (next turn)</tspan>
+<tspan x="1515.0" y="673.125">Prevents cache busts &amp; cost spikes</tspan>
+</text>
+<rect id="core_compress" x="850" y="720" width="420" height="120" rx="8" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1060.0" y="742.125" font-weight="700">Context Engine &amp; Compressor</tspan>
+<tspan x="1060.0" y="762.375">(agent/context_engine.py)</tspan>
+<tspan x="1060.0" y="782.625">Pluggable ContextEngine ABC,</tspan>
+<tspan x="1060.0" y="802.875">lossy summarization near limit,</tspan>
+<tspan x="1060.0" y="823.125">protects context window headroom</tspan>
+</text>
+<rect id="core_provider" x="1300" y="720" width="430" height="120" rx="8" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1515.0" y="742.125" font-weight="700">Runtime Provider Resolution</tspan>
+<tspan x="1515.0" y="762.375">(hermes_cli/runtime_provider.py)</tspan>
+<tspan x="1515.0" y="782.625">Maps configured model to 3 API Modes:</tspan>
+<tspan x="1515.0" y="802.875">chat_completions | codex_responses |</tspan>
+<tspan x="1515.0" y="823.125">anthropic_messages</tspan>
+</text>
+<rect id="core_guard" x="850" y="870" width="880" height="70" rx="8" fill="#ddd6fe" stroke="#6b21a8" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1290.0" y="897.5" font-weight="700">Turn Integrity &amp; Alternation Guard</tspan>
+<tspan x="1290.0" y="917.75">Strict role alternation (User -&gt; Assistant -&gt; Tool) | Auxiliary LLM Client (vision / summarization)</tspan>
+</text>
+<rect id="z_providers" x="1800" y="390" width="620" height="580" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2" stroke-dasharray="8 6" opacity="0.25"  />
+<text x="1820" y="426" font-size="20" fill="#ea580c" text-anchor="start" font-weight="600">
+<tspan x="1820" y="426.0">MODEL PROVIDERS &amp; NOUS PORTAL</tspan>
+</text>
+<rect id="p_portal" x="1830" y="440" width="560" height="130" rx="8" fill="#fed7aa" stroke="#ea580c" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2110.0" y="467.125" font-weight="700">Nous Portal (Unified Subscription)</tspan>
+<tspan x="2110.0" y="487.375">(portal.nousresearch.com)</tspan>
+<tspan x="2110.0" y="507.625">- 300+ LLM models with zero key setup</tspan>
+<tspan x="2110.0" y="527.875">- Tool Gateway: FAL image gen, OpenAI TTS,</tspan>
+<tspan x="2110.0" y="548.125">  Browser Use cloud, Web search routed natively</tspan>
+</text>
+<rect id="p_external" x="1830" y="600" width="560" height="190" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2110.0" y="636.875" font-weight="700">Direct Provider Integrations</tspan>
+<tspan x="2110.0" y="657.125">(hermes model / config.yaml)</tspan>
+<tspan x="2110.0" y="677.375">- Anthropic (Claude 3.7 / 3.5 Sonnet)</tspan>
+<tspan x="2110.0" y="697.625">- OpenAI (GPT-4o, o1, o3-mini)</tspan>
+<tspan x="2110.0" y="717.875">- OpenRouter (all hosted models)</tspan>
+<tspan x="2110.0" y="738.125">- DeepSeek, Together, Groq, Mistral</tspan>
+<tspan x="2110.0" y="758.375">- Local / Self-hosted: Ollama, vLLM</tspan>
+</text>
+<rect id="p_aux" x="1830" y="820" width="560" height="120" rx="8" fill="#fed7aa" stroke="#ea580c" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2110.0" y="862.375" font-weight="700">Auxiliary Client (agent/auxiliary_client.py)</tspan>
+<tspan x="2110.0" y="882.625">Side tasks: Vision evaluation, context compression,</tspan>
+<tspan x="2110.0" y="902.875">embedding creation without polluting main prompt</tspan>
+</text>
+<rect id="z_tools" x="60" y="1010" width="1500" height="740" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" stroke-dasharray="8 6" opacity="0.25"  />
+<text x="80" y="1046" font-size="20" fill="#059669" text-anchor="start" font-weight="600">
+<tspan x="80" y="1046.0">TOOL ORCHESTRATION &amp; EXECUTION ENVIRONMENTS (CAPABILITY AT EDGES)</tspan>
+</text>
+<rect id="to_registry" x="90" y="1060" width="680" height="110" rx="8" fill="#a7f3d0" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="430.0" y="1077.125" font-weight="700">Tool Orchestrator &amp; Toolsets</tspan>
+<tspan x="430.0" y="1097.375">(model_tools.py &amp; toolsets.py)</tspan>
+<tspan x="430.0" y="1117.625">- Core Tools (_HERMES_CORE_TOOLS)</tspan>
+<tspan x="430.0" y="1137.875">- Session-gated toolsets (desktop_ui, project)</tspan>
+<tspan x="430.0" y="1158.125">- Dynamic discovery &amp; check_fn gating (70+ tools)</tspan>
+</text>
+<rect id="to_approval" x="800" y="1060" width="730" height="110" rx="8" fill="#fecdd3" stroke="#e11d48" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1165.0" y="1077.125" font-weight="700">Command Approval &amp; Safety Gate</tspan>
+<tspan x="1165.0" y="1097.375">(tools/approval.py)</tspan>
+<tspan x="1165.0" y="1117.625">- Dangerous pattern detection (rm -rf, dd...)</tspan>
+<tspan x="1165.0" y="1137.875">- Interactive CLI / Platform confirm prompts</tspan>
+<tspan x="1165.0" y="1158.125">- Sandbox isolation &amp; permission allowlists</tspan>
+</text>
+<text x="90" y="1211" font-size="16" fill="#047857" text-anchor="start" font-weight="600">
+<tspan x="90" y="1211.0">BUILT-IN TOOL CAPABILITIES (Model Tools):</tspan>
+</text>
+<rect id="t_term" x="90" y="1230" width="220" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="200.0" y="1254.65" font-weight="700">Terminal Tool</tspan>
+<tspan x="200.0" y="1273.5500000000002">(terminal_tool.py)</tspan>
+<tspan x="200.0" y="1292.45">Shell execution,</tspan>
+<tspan x="200.0" y="1311.3500000000001">background tasks,</tspan>
+<tspan x="200.0" y="1330.25">PTY &amp; ANSI strip</tspan>
+</text>
+<rect id="t_file" x="330" y="1230" width="220" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="440.0" y="1254.65" font-weight="700">File System</tspan>
+<tspan x="440.0" y="1273.5500000000002">(file_tools.py)</tspan>
+<tspan x="440.0" y="1292.45">read_file, write_file,</tspan>
+<tspan x="440.0" y="1311.3500000000001">patch, search_files,</tspan>
+<tspan x="440.0" y="1330.25">ripgrep integration</tspan>
+</text>
+<rect id="t_browser" x="570" y="1230" width="230" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="685.0" y="1254.65" font-weight="700">Browser Automation</tspan>
+<tspan x="685.0" y="1273.5500000000002">(browser_tool.py)</tspan>
+<tspan x="685.0" y="1292.45">5 backends, Playwright,</tspan>
+<tspan x="685.0" y="1311.3500000000001">headless DOM actions,</tspan>
+<tspan x="685.0" y="1330.25">screenshot capture</tspan>
+</text>
+<rect id="t_web" x="820" y="1230" width="220" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="930.0" y="1254.65" font-weight="700">Web Search</tspan>
+<tspan x="930.0" y="1273.5500000000002">(web_tools.py)</tspan>
+<tspan x="930.0" y="1292.45">web_search, extract,</tspan>
+<tspan x="930.0" y="1311.3500000000001">Nous Tool Gateway,</tspan>
+<tspan x="930.0" y="1330.25">DuckDuckGo / Tavily</tspan>
+</text>
+<rect id="t_mcp" x="1060" y="1230" width="220" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1170.0" y="1254.65" font-weight="700">MCP Dynamic Client</tspan>
+<tspan x="1170.0" y="1273.5500000000002">(tools/mcp_tool.py)</tspan>
+<tspan x="1170.0" y="1292.45">Model Context Protocol</tspan>
+<tspan x="1170.0" y="1311.3500000000001">stdio/SSE servers,</tspan>
+<tspan x="1170.0" y="1330.25">zero core schema cost</tspan>
+</text>
+<rect id="t_subagent" x="1300" y="1230" width="230" height="120" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="14" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1415.0" y="1254.65" font-weight="700">Subagent Delegate</tspan>
+<tspan x="1415.0" y="1273.5500000000002">(delegate_tool.py)</tspan>
+<tspan x="1415.0" y="1292.45">Spawn isolated child</tspan>
+<tspan x="1415.0" y="1311.3500000000001">agents for parallel</tspan>
+<tspan x="1415.0" y="1330.25">multi-step workflows</tspan>
+</text>
+<text x="90" y="1391" font-size="16" fill="#047857" text-anchor="start" font-weight="600">
+<tspan x="90" y="1391.0">7 TERMINAL EXECUTION BACKENDS (tools/environments/):</tspan>
+</text>
+<rect id="env_local" x="90" y="1410" width="330" height="110" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="255.0" y="1427.125" font-weight="700">Local OS Execution</tspan>
+<tspan x="255.0" y="1447.375">(LocalEnvironment)</tspan>
+<tspan x="255.0" y="1467.625">Direct host shell,</tspan>
+<tspan x="255.0" y="1487.875">process management,</tspan>
+<tspan x="255.0" y="1508.125">interactive PTY</tspan>
+</text>
+<rect id="env_docker" x="440" y="1410" width="330" height="110" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="605.0" y="1427.125" font-weight="700">Docker / Singularity</tspan>
+<tspan x="605.0" y="1447.375">(DockerEnvironment)</tspan>
+<tspan x="605.0" y="1467.625">Containerized sandbox,</tspan>
+<tspan x="605.0" y="1487.875">filesystem isolation,</tspan>
+<tspan x="605.0" y="1508.125">secure reproducible run</tspan>
+</text>
+<rect id="env_ssh" x="790" y="1410" width="340" height="110" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="960.0" y="1427.125" font-weight="700">Remote SSH</tspan>
+<tspan x="960.0" y="1447.375">(SSHEnvironment)</tspan>
+<tspan x="960.0" y="1467.625">Run commands on remote</tspan>
+<tspan x="960.0" y="1487.875">cloud VMs, edge nodes,</tspan>
+<tspan x="960.0" y="1508.125">or GPU clusters</tspan>
+</text>
+<rect id="env_serverless" x="1150" y="1410" width="380" height="110" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="1340.0" y="1437.25" font-weight="700">Modal &amp; Daytona &amp; Vercel</tspan>
+<tspan x="1340.0" y="1457.5">(Serverless Hibernation)</tspan>
+<tspan x="1340.0" y="1477.75">Hibernates when idle — $0 cost</tspan>
+<tspan x="1340.0" y="1498.0">Wakes on demand with full state</tspan>
+</text>
+<rect id="env_sec" x="90" y="1550" width="1440" height="70" rx="8" fill="#99f6e4" stroke="#0f766e" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="810.0" y="1577.5" font-weight="700">Credential Isolation &amp; Env Passthrough (tools/credential_files.py &amp; env_passthrough.py)</tspan>
+<tspan x="810.0" y="1597.75">Safely forwards selected API keys into isolated sandboxes without leaking full host environment</tspan>
+</text>
+<rect id="env_plugins" x="90" y="1640" width="1440" height="80" rx="8" fill="#a7f3d0" stroke="#047857" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="15" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="810.0" y="1672.5" font-weight="700">Extensibility Plugins Ecosystem (plugins/)</tspan>
+<tspan x="810.0" y="1692.75">memory/ | context_engine/ | platforms/ | model-providers/ | kanban/ | image_gen/</tspan>
+</text>
+<rect id="z_learning" x="1600" y="1010" width="820" height="740" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2" stroke-dasharray="8 6" opacity="0.25"  />
+<text x="1620" y="1046" font-size="20" fill="#4338ca" text-anchor="start" font-weight="600">
+<tspan x="1620" y="1046.0">CLOSED LEARNING &amp; PERSISTENCE LOOP</tspan>
+</text>
+<rect id="m_memory" x="1630" y="1060" width="760" height="150" rx="8" fill="#c7d2fe" stroke="#4338ca" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2010.0" y="1083.8" font-weight="700">Persistent Memory System</tspan>
+<tspan x="2010.0" y="1105.3999999999999">(agent/memory_manager.py)</tspan>
+<tspan x="2010.0" y="1127.0">- Curated MEMORY.md &amp; USER.md</tspan>
+<tspan x="2010.0" y="1148.6">- Autonomous memory nudges</tspan>
+<tspan x="2010.0" y="1170.2">- Dialectic user modeling (Honcho)</tspan>
+<tspan x="2010.0" y="1191.8">- Profile-scoped memory banks</tspan>
+</text>
+<rect id="m_skills" x="1630" y="1240" width="760" height="160" rx="8" fill="#c7d2fe" stroke="#4338ca" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2010.0" y="1268.8" font-weight="700">Autonomous Skills System</tspan>
+<tspan x="2010.0" y="1290.3999999999999">(skills/ &amp; hermes_cli/skills_hub.py)</tspan>
+<tspan x="2010.0" y="1312.0">- Autonomous skill creation after complex tasks</tspan>
+<tspan x="2010.0" y="1333.6">- Skills self-improve through practical usage</tspan>
+<tspan x="2010.0" y="1355.2">- Compatible with agentskills.io open standard</tspan>
+<tspan x="2010.0" y="1376.8">- Skills Hub discovery &amp; /skills slash commands</tspan>
+</text>
+<rect id="m_recall" x="1630" y="1430" width="760" height="140" rx="8" fill="#c7d2fe" stroke="#4338ca" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2010.0" y="1459.6" font-weight="700">Cross-Session Recall &amp; FTS5 Search</tspan>
+<tspan x="2010.0" y="1481.1999999999998">(hermes_state.py &amp; hermes_state_*.py)</tspan>
+<tspan x="2010.0" y="1502.8">- SQLite FTS5 full-text indexing of past turns</tspan>
+<tspan x="2010.0" y="1524.3999999999999">- Semantic &amp; keyword conversation recall</tspan>
+<tspan x="2010.0" y="1546.0">- LLM cross-session summarization</tspan>
+</text>
+<rect id="m_loop" x="1630" y="1600" width="760" height="120" rx="8" fill="#a5b4fc" stroke="#3730a3" stroke-width="2"  opacity="1.0" filter="url(#shadow)" />
+<text font-size="16" fill="#1e1e1e" text-anchor="middle" font-weight="500">
+<tspan x="2010.0" y="1641.1999999999998" font-weight="700">Continuous Self-Improvement Loop</tspan>
+<tspan x="2010.0" y="1662.7999999999997">Skills &amp; Memories automatically feed into the System Prompt Builder</tspan>
+<tspan x="2010.0" y="1684.3999999999999">for future sessions, creating a cumulative learning flywheel</tspan>
+</text>
+<polyline id="a_ep_cli" points="305,320 305,440" fill="none" stroke="#0284c7" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-blue)" />
+<text font-size="14" fill="#0284c7" text-anchor="middle" font-weight="500">
+<tspan x="305.0" y="382.45">Command / Input</tspan>
+</text>
+<polyline id="a_ep_gw" points="775,320 520,440" fill="none" stroke="#0284c7" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-blue)" />
+<text font-size="14" fill="#0284c7" text-anchor="middle" font-weight="500">
+<tspan x="902.5" y="382.45">Message Event</tspan>
+</text>
+<polyline id="a_ep_desk" points="1245,320 1245,440" fill="none" stroke="#7e22ce" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-purple)" />
+<text font-size="14" fill="#7e22ce" text-anchor="middle" font-weight="500">
+<tspan x="1245.0" y="382.45">JSON-RPC Request</tspan>
+</text>
+<polyline id="a_ep_acp" points="1705,320 1450,440" fill="none" stroke="#7e22ce" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-purple)" />
+<text font-size="14" fill="#7e22ce" text-anchor="middle" font-weight="500">
+<tspan x="1832.5" y="382.45">ACP Protocol</tspan>
+</text>
+<polyline id="a_gw_to_core" points="750,490 850,490" fill="none" stroke="#d97706" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead)" />
+<text font-size="14" fill="#d97706" text-anchor="middle" font-weight="500">
+<tspan x="800.0" y="492.45">Spawn AIAgent</tspan>
+</text>
+<polyline id="a_pr_to_loop" points="1060,570 1060,540" fill="none" stroke="#7e22ce" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-purple)" />
+<text font-size="14" fill="#7e22ce" text-anchor="middle" font-weight="500">
+<tspan x="1060.0" y="587.4499999999999">System Prompt</tspan>
+</text>
+<polyline id="a_ca_to_loop" points="1515,570 1515,540" fill="none" stroke="#7e22ce" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-purple)" />
+<text font-size="14" fill="#7e22ce" text-anchor="middle" font-weight="500">
+<tspan x="1515.0" y="587.4499999999999">Cached Prefix</tspan>
+</text>
+<polyline id="a_core_prov" points="1550,540 1550,720" fill="none" stroke="#7e22ce" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-purple)" />
+<text font-size="14" fill="#7e22ce" text-anchor="middle" font-weight="500">
+<tspan x="1550.0" y="632.4499999999999">Resolve API Mode</tspan>
+</text>
+<polyline id="a_prov_portal" points="1730,750 1830,510" fill="none" stroke="#ea580c" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-orange)" />
+<text font-size="14" fill="#ea580c" text-anchor="middle" font-weight="500">
+<tspan x="1780.0" y="872.4499999999999">Portal API</tspan>
+</text>
+<polyline id="a_prov_ext" points="1730,780 1830,700" fill="none" stroke="#ea580c" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-orange)" />
+<text font-size="14" fill="#ea580c" text-anchor="middle" font-weight="500">
+<tspan x="1780.0" y="822.4499999999999">LLM Request</tspan>
+</text>
+<polyline id="a_llm_return" points="1830,630 1730,470" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="8 6" opacity="1.0" marker-end="url(#arrowhead-orange)" />
+<text font-size="14" fill="#ea580c" text-anchor="middle" font-weight="500">
+<tspan x="1880.0" y="712.4499999999999">Tool Calls / Text</tspan>
+</text>
+<polyline id="a_loop_to_to" points="950,540 430,1060" fill="none" stroke="#059669" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-green)" />
+<text font-size="14" fill="#059669" text-anchor="middle" font-weight="500">
+<tspan x="1210.0" y="802.4499999999999">Execute Tool Call</tspan>
+</text>
+<polyline id="a_to_approval" points="770,1115 800,1115" fill="none" stroke="#e11d48" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-red)" />
+<text font-size="14" fill="#e11d48" text-anchor="middle" font-weight="500">
+<tspan x="785.0" y="1117.45">Safety Check</tspan>
+</text>
+<polyline id="a_app_to_term" points="850,1170 200,1230" fill="none" stroke="#059669" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-green)" />
+<text font-size="14" fill="#059669" text-anchor="middle" font-weight="500">
+<tspan x="1175.0" y="1202.45">Approved</tspan>
+</text>
+<polyline id="a_app_to_mcp" points="1165,1170 1170,1230" fill="none" stroke="#059669" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-green)" />
+<text font-size="14" fill="#059669" text-anchor="middle" font-weight="500">
+<tspan x="1167.5" y="1202.45">Dispatch</tspan>
+</text>
+<polyline id="a_term_to_env" points="200,1350 255,1410" fill="none" stroke="#0d9488" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-teal)" />
+<text font-size="14" fill="#0d9488" text-anchor="middle" font-weight="500">
+<tspan x="227.5" y="1382.45">Exec Target</tspan>
+</text>
+<polyline id="a_term_to_modal" points="310,1340 1200,1410" fill="none" stroke="#0d9488" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead-teal)" />
+<text font-size="14" fill="#0d9488" text-anchor="middle" font-weight="500">
+<tspan x="755.0" y="1377.45">Hibernate/Wake</tspan>
+</text>
+<polyline id="a_tool_result" points="1250,1060 1350,540" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="8 6" opacity="1.0" marker-end="url(#arrowhead-green)" />
+<text font-size="14" fill="#059669" text-anchor="middle" font-weight="500">
+<tspan x="1300.0" y="1322.45">Tool Return Data</tspan>
+</text>
+<polyline id="a_loop_session" points="850,520 750,610" fill="none" stroke="#d97706" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead)" />
+<text font-size="14" fill="#d97706" text-anchor="middle" font-weight="500">
+<tspan x="900.0" y="567.4499999999999">Persist Turn</tspan>
+</text>
+<polyline id="a_loop_learn" points="1730,520 1800,1060" fill="none" stroke="#4338ca" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead)" />
+<text font-size="14" fill="#4338ca" text-anchor="middle" font-weight="500">
+<tspan x="1765.0" y="792.4499999999999">Post-Task Nudge</tspan>
+</text>
+<polyline id="a_loop_skill" points="1680,540 1950,1240" fill="none" stroke="#4338ca" stroke-width="2"  opacity="1.0" marker-end="url(#arrowhead)" />
+<text font-size="14" fill="#4338ca" text-anchor="middle" font-weight="500">
+<tspan x="1815.0" y="892.4499999999999">Autonomous Skill Creation</tspan>
+</text>
+<polyline id="a_flywheel" points="1630,1660 850,630" fill="none" stroke="#3730a3" stroke-width="3"  opacity="1.0" marker-end="url(#arrowhead-indigo)" />
+<text font-size="14" fill="#3730a3" text-anchor="middle" font-weight="500">
+<tspan x="2020.0" y="2177.4500000000003">Cumulative Learning Flywheel (Fed to Next System Prompt)</tspan>
+</text>
+</svg>

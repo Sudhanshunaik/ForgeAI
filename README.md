@@ -1,243 +1,377 @@
-<p align="center">
-  <img src="assets/banner.png" alt="Hermes Agent" width="100%">
-</p>
+# ForgeAI ⚒️
 
-# Hermes Agent ☤
-<p align="center">
-  <a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a> | <a href="https://hermes-agent.nousresearch.com/">Hermes Desktop</a>
-</p>
-<p align="center">
-  <a href="https://hermes-agent.nousresearch.com/docs/"><img src="https://img.shields.io/badge/Docs-hermes--agent.nousresearch.com-FFD700?style=for-the-badge" alt="Documentation"></a>
-  <a href="https://discord.gg/NousResearch"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="https://github.com/NousResearch/hermes-agent/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
-  <a href="https://nousresearch.com"><img src="https://img.shields.io/badge/Built%20by-Nous%20Research-blueviolet?style=for-the-badge" alt="Built by Nous Research"></a>
-  <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="中文"></a>
-  <a href="README.ur-pk.md"><img src="https://img.shields.io/badge/Lang-اردو-green?style=for-the-badge" alt="اردو"></a>
-  <a href="README.es.md"><img src="https://img.shields.io/badge/Lang-Español-orange?style=for-the-badge" alt="Español"></a>
-</p>
+> **A locally-run, autonomous multi-agent AI engineering system where specialized agents collaborate on complex software workflows, orchestrated by a human manager through a Kanban-driven protocol.**
 
-**The self-improving AI agent built by [Nous Research](https://nousresearch.com).** It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It's not tied to your laptop — talk to it from Telegram while it works on a cloud VM.
-
-Use any model you want — [Nous Portal](https://portal.nousresearch.com), OpenRouter, OpenAI, your own endpoint, and [many others](https://hermes-agent.nousresearch.com/docs/integrations/providers). Switch with `hermes model` — no code changes, no lock-in.
-
-<table>
-<tr><td><b>A real terminal interface</b></td><td>Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.</td></tr>
-<tr><td><b>Lives where you do</b></td><td>Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.</td></tr>
-<tr><td><b>A closed learning loop</b></td><td>Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall. <a href="https://github.com/plastic-labs/honcho">Honcho</a> dialectic user modeling. Compatible with the <a href="https://agentskills.io">agentskills.io</a> open standard.</td></tr>
-<tr><td><b>Scheduled automations</b></td><td>Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.</td></tr>
-<tr><td><b>Delegates and parallelizes</b></td><td>Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.</td></tr>
-<tr><td><b>Runs anywhere, not just your laptop</b></td><td>Seven terminal backends — local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox. Daytona and Modal offer serverless persistence — your agent's environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.</td></tr>
-<tr><td><b>Research-ready</b></td><td>Batch trajectory generation, trajectory compression for training the next generation of tool-calling models.</td></tr>
-</table>
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20WSL2-orange?style=for-the-badge)](https://github.com/Sudhanshunaik/ForegeAI)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20Private-success?style=for-the-badge)](#core-principles)
+[![LLM](https://img.shields.io/badge/LLM-DeepSeek%20Flash%20%2F%20V4%20Flash-blueviolet?style=for-the-badge)](#local-llm-layer)
+[![Dashboard](https://img.shields.io/badge/Dashboard-React%20%2B%20Vite-cyan?style=for-the-badge)](#web-dashboard--tui)
 
 ---
 
-## Quick Install
+## 📌 Table of Contents
 
-### Linux, macOS, WSL2
+- [Overview](#overview)
+- [Core Principles](#core-principles)
+- [System Architecture](#system-architecture)
+- [Agent Fleet](#agent-fleet)
+- [Kanban-Driven Orchestration](#kanban-driven-orchestration)
+- [Live Demo Applications](#live-demo-applications)
+- [Web Dashboard & TUI](#web-dashboard--tui)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuring Local LLMs](#configuring-local-llms)
+  - [Setting Up Agent Profiles](#setting-up-agent-profiles)
+  - [Starting the Gateway & Dashboard](#starting-the-gateway--dashboard)
+- [Example End-to-End Workflow](#example-end-to-end-workflow)
+- [Dispatch Protocol](#dispatch-protocol)
+- [Repository Structure](#repository-structure)
+- [Tech Stack](#tech-stack)
+- [License](#license)
+
+---
+
+## Overview
+
+**ForgeAI** transforms a developer's workstation into an autonomous, locally-hosted software engineering team. Rather than relying on a single, monolithic AI assistant that attempts to do everything, ForgeAI deploys a **fleet of specialized autonomous agents**—each with dedicated domain boundaries, tailored system prompts (SOULs), and strict output contracts.
+
+The **human developer acts as the engineering manager / coordinator**: defining high-level goals, guiding architectural decisions, and evaluating results, while the autonomous agent fleet handles end-to-end implementation, code review, documentation research, and browser verification.
+
+All agents, tools, databases, and LLM inferences execute **100% locally on your own machine**—ensuring absolute privacy, zero cloud API fees, and deterministic offline reliability.
+
+---
+
+## Core Principles
+
+| Principle | Description |
+|---|---|
+| 🔒 **100% Local Sovereignty** | All LLM inference, agent runtimes, vector search, and state databases live on your machine. Zero cloud dependency and zero telemetry leakage. |
+| 🧑‍💼 **Human-as-Manager** | The human leads strategy, architecture, and final approval. Agents never guess on ambiguities—they request clarification. |
+| 🎯 **Strict Specialization** | Agents own concrete domains (Backend, Frontend, Research, Review, Management). Separation of concerns prevents domain pollution and increases code quality. |
+| 📋 **Kanban-Driven Lifecycle** | Any multi-agent or cross-domain work strictly requires a dedicated Kanban board for transparent dependency tracking and accountability. |
+| 🔍 **Evidence-Based Delivery** | Agents never assert "it works" without proof. Every delivery requires verified terminal output, test results, or live browser inspection logs. |
+
+---
+
+## System Architecture
+
+```mermaid
+graph TD
+    User["👤 Human Engineering Manager"]
+
+    subgraph ForgeAI["ForgeAI — Local Autonomous Multi-Agent System"]
+        Gateway["⚡ Hermes Gateway Service<br/>(Multiplexed systemd daemon)"]
+        Dashboard["💻 ForgeAI Dashboard<br/>(React + Vite · localhost:1618)"]
+        Kanban["📋 Kanban Board Engine<br/>(Dependency & Task Tracker)"]
+
+        subgraph Fleet["Specialized Agent Fleet"]
+            Manager["🎯 Manager Agent<br/>(Fleet Orchestrator)"]
+            Backend["⚙️ Backend Specialist<br/>(APIs, DBs, Logic)"]
+            Frontend["🎨 Frontend Specialist<br/>(UI/UX, Browser Verified)"]
+            Researcher["🔍 Researcher Specialist<br/>(Docs, Specs, Recon)"]
+            Reviewer["🛡️ Reviewer Specialist<br/>(Code Audit, Security)"]
+        end
+
+        subgraph LocalInference["Local LLM Layer"]
+            DS_V4["🧠 DeepSeek V4 Flash<br/>(Orchestration & Reasoning)"]
+            DS_Flash["⚡ DeepSeek Flash<br/>(High-Speed Code Generation)"]
+        end
+    end
+
+    User <-->|"Directs, approves, assigns"| Manager
+    Manager <-->|"Dispatches briefs & verifies"| Backend
+    Manager <-->|"Dispatches briefs & verifies"| Frontend
+    Manager <-->|"Dispatches briefs & verifies"| Researcher
+    Manager <-->|"Routes diffs for audit"| Reviewer
+    Manager <-->|"Tracks dependencies & cards"| Kanban
+
+    Gateway --- Manager
+    Gateway --- Backend
+    Gateway --- Frontend
+    Gateway --- Researcher
+    Gateway --- Reviewer
+    Dashboard <--> Gateway
+
+    Manager --> DS_V4
+    Backend --> DS_Flash
+    Frontend --> DS_Flash
+    Researcher --> DS_Flash
+    Reviewer --> DS_Flash
+```
+
+A vector and preview diagram of the architecture is available at [`hermes-agent-architecture.svg`](hermes-agent-architecture.svg) and editable in [`hermes-agent-architecture.excalidraw`](hermes-agent-architecture.excalidraw).
+
+---
+
+## Agent Fleet
+
+ForgeAI includes **5 purpose-built agent profiles**, each configured with isolated state, tailored system instructions, and specialized tooling:
+
+### 🎯 1. Manager — Fleet Orchestrator
+- **Profile:** `manager` | **Model:** DeepSeek V4 Flash
+- **Domain:** Problem decomposition, Kanban card creation, brief dispatching, cross-agent coordination, deliverable verification.
+- **Rules:**
+  - Decomposes complex objectives into atomic, testable deliverables.
+  - Generates self-contained dispatch briefs for specialist agents.
+  - Never fabricates output from specialists; validates diffs and command evidence before delivering to the human coordinator.
+
+### ⚙️ 2. Backend — Server-Side Specialist
+- **Profile:** `backend` | **Model:** DeepSeek Flash
+- **Domain:** Server architectures, REST / GraphQL / gRPC endpoints, database schemas & migrations, transaction safety, business logic, background queues.
+- **Standards:**
+  - Validates schemas, parameters, and error handling for all endpoints.
+  - Proves implementation correctness using unit/integration tests and real curl/HTTP execution.
+
+### 🎨 3. Frontend — Client-Side Specialist
+- **Profile:** `frontend` | **Model:** DeepSeek Flash
+- **Domain:** Component architecture, modern styling, client state management, responsive layouts, accessibility (WCAG), performance.
+- **Standards:**
+  - Launches local dev servers and verifies rendered DOM and console logs.
+  - Explicitly tests empty, loading, error, and dynamic content states.
+  - Never assumes visual layout without real browser validation.
+
+### 🔍 4. Researcher — Reconnaissance & Documentation
+- **Profile:** `researcher` | **Model:** DeepSeek Flash
+- **Domain:** Library evaluation, version compatibility matrices, documentation search, RFC/spec verification, codebase reconnaissance.
+- **Standards:**
+  - Does not modify production code.
+  - Returns concise, sourced findings with clear distinctions between confirmed facts and inferences.
+
+### 🛡️ 5. Reviewer — Code Review & Security Audit
+- **Profile:** `reviewer` | **Model:** DeepSeek Flash
+- **Domain:** PR diff inspection, OWASP vulnerability detection, edge case analysis, race condition discovery, lint compliance.
+- **Standards:**
+  - Does not modify code directly to preserve audit independence.
+  - Groups findings strictly by severity (`blocking` / `major` / `minor` / `nit`) with actionable remediation suggestions.
+
+---
+
+## Kanban-Driven Orchestration
+
+Multi-agent collaboration in ForgeAI is governed by an enforced rule: **ALWAYS create a new Kanban board whenever multiple agents collaborate.**
+
+```
+┌──────┐    ┌─────────────┐    ┌────────┐    ┌──────┐
+│ todo │───▶│ in_progress │───▶│ review │───▶│ done │
+└──────┘    └─────────────┘    └────────┘    └──────┘
+```
+
+### Core Commands
 
 ```bash
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+# 1. Create a dedicated task board
+hermes kanban boards create auth-service
+
+# 2. Switch active board context
+hermes kanban boards switch auth-service
+
+# 3. Create task cards with clear criteria and assignees
+hermes kanban create --title "Design JWT Auth Endpoints" \
+  --body "Implement POST /api/login and POST /api/register with unit tests" \
+  --assignee backend
+
+# 4. Link dependencies (frontend blocked until backend API schema is ready)
+hermes kanban link <backend_card_id> <frontend_card_id>
+
+# 5. Review board status
+hermes kanban
 ```
 
-### Windows (native, PowerShell)
+---
 
-> **Heads up:** Native Windows runs Hermes without WSL — CLI, gateway, TUI, and tools all work natively. If you'd rather use WSL2, the Linux/macOS one-liner above works there too. Found a bug? Please [file issues](https://github.com/NousResearch/hermes-agent/issues).
+## Live Demo Applications
 
-Run this in PowerShell:
+ForgeAI was used end-to-end to design, engineer, and test a diverse suite of real-world applications, available under [`demo-apps/`](demo-apps/):
 
-```powershell
-iex (irm https://hermes-agent.nousresearch.com/install.ps1)
-```
+| Application | Stack | Highlights |
+|---|---|---|
+| 🛠️ **[RIGFORGE (PC Builder)](demo-apps/pc-builder/)** | React + Vite + TypeScript | 65+ PC components, real-time socket/chipset compatibility checking, power consumption estimation, and multi-tier gaming/AI performance forecasting. |
+| 🌍 **[Earth 3D](demo-apps/earth-3d/)** | Three.js + WebGL | Photorealistic interactive Earth with PBR shaders, specular ocean reflections, independent cloud layer rotation, atmospheric rim scattering, and night city lights. |
+| 🎯 **[NeonStrike](demo-apps/shooter-game/)** | Vanilla JS + HTML5 Canvas | Raycast 3D arena FPS engine built without external game libraries featuring bot pathfinding, multiple weapons, sprint/dash mechanics, and match flow. |
+| 🕹️ **[Chomp!](demo-apps/pacman-game/)** | Vanilla JS + Canvas | Complete arcade maze-chase game featuring 4 authentic ghost AI behaviors, fruit bonuses, sound synthesizer, and swipe/keyboard controls. |
+| 🛒 **[MegaCart](demo-apps/flipkart-clone/)** | HTML5 + CSS3 + JS | E-commerce shopping store with dynamic category rails, promotional carousels, responsive cart drawer, and 3-step checkout simulation. |
+| 📱 **[PhoneHub](demo-apps/phone-store/)** | HTML5 + CSS3 + JS | Modern smartphone marketplace with specification filters, brand sorting, modal quick-views, and persistent cart. |
+| 🌾 **[AgriFresh](demo-apps/agri-store/)** | HTML5 + CSS3 + JS | Farm-to-table agricultural collective store featuring organic produce, cold-pressed oils, unpolished grains, and recipe guides. |
+| 🧥 **[Maison Rétro](demo-apps/vintage-store/)** | HTML5 + CSS3 + JS | Curated vintage fashion boutique with decade filters (70s, 80s, 90s), item condition rating, and cart flow. |
+| ⚡ **[Webroot Portal](demo-apps/webroot/)** | HTML5 + CSS3 | Unified live hub exposing all showcase applications under a single cohesive dashboard. |
 
-The source installer delegates Python 3.14, Node.js, npm, ripgrep, FFmpeg,
-and Python dependencies to PM. If Git is absent, it stages the verified Git
-for Windows archive in Hermes' tool store. It does not replace your system Git.
-See [installation methods](https://hermes-agent.nousresearch.com/docs/getting-started/installation)
-for the separate MSIX/App Installer package and its update ownership.
+---
 
-> **Android / Termux:** A signed APT repository is available for aarch64 devices, with a `stable` channel (tagged releases) and a prerelease `canary` channel. The package includes Python, Node.js, and the TUI. Use the [Termux guide](https://hermes-agent.nousresearch.com/docs/getting-started/termux), not the desktop/server installer script.
->
-> **Windows:** Native Windows is fully supported — the PowerShell one-liner above installs everything. If you'd rather use WSL2, the Linux command works there too. Native Windows install lives under `%LOCALAPPDATA%\hermes`; WSL2 installs under `~/.hermes` as on Linux.
+## Web Dashboard & TUI
 
-After installation:
+ForgeAI provides both visual web observability and high-speed terminal interactions:
 
-```bash
-source ~/.bashrc    # reload shell (or: source ~/.zshrc)
-hermes              # start chatting!
-```
+### 1. Web Dashboard (localhost:1618)
+- **Built with:** React, Vite, TypeScript.
+- **Theme:** Signature *ForgeAI Black* (`#000000` true dark mode).
+- **Features:** Real-time multi-agent session monitoring, Kanban board visualizer, streaming tool invocation feeds, token analytics, and profile management.
 
-### Troubleshooting
-
-#### Windows Defender or antivirus flags `uv.exe` as malware
-
-If your antivirus (Bitdefender, Windows Defender, etc.) quarantines `uv.exe` from the Hermes `bin` folder (`%LOCALAPPDATA%\hermes\bin\uv.exe`), this is a **false positive**. The file is Astral's `uv` — the Rust Python package manager Hermes bundles to manage its Python environment. ML-based antivirus engines commonly flag unsigned Rust binaries that download and install packages.
-
-**To verify your copy is authentic:**
-
-```powershell
-# Install GitHub CLI if needed
-winget install --id GitHub.cli
-
-# Login to GitHub
-gh auth login
-
-# Run verification
-$uv = "$env:LOCALAPPDATA\hermes\bin\uv.exe"
-$ver = (& $uv --version).Split(' ')[1]
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$zip = "$env:TEMP\uv.zip"
-Invoke-WebRequest "https://github.com/astral-sh/uv/releases/download/$ver/uv-x86_64-pc-windows-msvc.zip" -OutFile $zip -UseBasicParsing
-gh attestation verify $zip --repo astral-sh/uv
-Expand-Archive $zip "$env:TEMP\uv_x" -Force
-(Get-FileHash "$env:TEMP\uv_x\uv.exe").Hash -eq (Get-FileHash $uv).Hash
-```
-
-If attestation says "Verification succeeded" and the last line prints `True`, you're good.
-
-**To whitelist Hermes:**
-- **Windows Defender:** Run PowerShell as Admin → `Add-MpPreference -ExclusionPath "$env:LOCALAPPDATA\hermes\bin"`
-- **Bitdefender:** Add an exception in the Bitdefender console (Protection > Antivirus > Settings > Manage Exceptions)
-- Whitelist the **folder**, not the file hash — Hermes updates `uv` and the hash changes every version
-
-For more context, see the upstream Astral reports: [astral-sh/uv#13553](https://github.com/astral-sh/uv/issues/13553), [astral-sh/uv#15011](https://github.com/astral-sh/uv/issues/15011), [astral-sh/uv#10079](https://github.com/astral-sh/uv/issues/10079).
+### 2. Rich Terminal UI (TUI)
+- Multiline input buffer, keyboard shortcuts, history navigation, and slash-command completions (`/kanban`, `/model`, `/profile`, `/status`).
+- Live terminal streaming of agent thought processes and tool actions.
 
 ---
 
 ## Getting Started
 
-```bash
-hermes              # Interactive CLI — start a conversation
-hermes model        # Choose your LLM provider and model
-hermes tools        # Configure which tools are enabled
-hermes config set   # Set individual config values
-hermes config get   # Print individual config values
-hermes gateway      # Start the messaging gateway (Telegram, Discord, etc.)
-hermes setup        # Run the full setup wizard (configures everything at once)
-hermes claw migrate # Migrate from OpenClaw (if coming from OpenClaw)
-hermes update       # Update to the latest version
-hermes doctor       # Diagnose any issues
-```
+### Prerequisites
+- **Operating System:** Linux (Fedora, Ubuntu, Debian, Arch) or macOS / WSL2
+- **Python:** 3.11+
+- **Node.js:** 18+
+- **Local LLM Runner:** [Ollama](https://ollama.com), [vLLM](https://github.com/vllm-project/vllm), or any OpenAI-compatible local server.
 
-📖 **[Full documentation →](https://hermes-agent.nousresearch.com/docs/)**
-
----
-
-## Skip the API-key collection — Nous Portal
-
-Hermes works with whatever provider you want — that's not changing. But if you'd rather not collect five separate API keys for the model, web search, image generation, TTS, and a cloud browser, **[Nous Portal](https://portal.nousresearch.com)** covers all of them under one subscription:
-
-- **300+ models** — pick any of them with `/model <name>`
-- **Tool Gateway** — web search, image generation (FAL), text-to-speech (OpenAI), cloud browser (Browser Use), all routed through your sub. No extra accounts.
-
-One command from a fresh install:
+### Installation
 
 ```bash
-hermes setup --portal
+# 1. Clone the repository
+git clone https://github.com/Sudhanshunaik/ForegeAI.git
+cd ForegeAI
+
+# 2. Activate virtual environment
+source .venv/bin/activate
+# or install dependencies
+pip install -e .
+npm install
 ```
 
-That logs you in via OAuth, sets Nous as your provider, and turns on the Tool Gateway. Check what's wired up any time with `hermes portal info`. Full details on the [Tool Gateway docs page](https://hermes-agent.nousresearch.com/docs/user-guide/features/tool-gateway).
+### Configuring Local LLMs
 
-You can still bring your own keys per-tool whenever you want — the gateway is per-backend, not all-or-nothing.
-
----
-
-## CLI vs Messaging Quick Reference
-
-Hermes has two entry points: start the terminal UI with `hermes`, or run the gateway and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or Email. Once you're in a conversation, many slash commands are shared across both interfaces.
-
-| Action                         | CLI                                           | Messaging platforms                                                              |
-| ------------------------------ | --------------------------------------------- | -------------------------------------------------------------------------------- |
-| Start chatting                 | `hermes`                                      | Run `hermes gateway setup` + `hermes gateway start`, then send the bot a message |
-| Start fresh conversation       | `/new` or `/reset`                            | `/new` or `/reset`                                                               |
-| Change model                   | `/model [provider:model]`                     | `/model [provider:model]`                                                        |
-| Set a personality              | `/personality [name]`                         | `/personality [name]`                                                            |
-| Retry or undo the last turn    | `/retry`, `/undo`                             | `/retry`, `/undo`                                                                |
-| Compress context / check usage | `/compress`, `/usage`, `/insights [--days N]` | `/compress`, `/usage`, `/insights [days]`                                        |
-| Browse skills                  | `/skills` or `/<skill-name>`                  | `/<skill-name>`                                                                  |
-| Interrupt current work         | `Ctrl+C` or send a new message                | `/stop` or send a new message                                                    |
-| Platform-specific status       | `/platforms`                                  | `/status`, `/sethome`                                                            |
-
-For the full command lists, see the [CLI guide](https://hermes-agent.nousresearch.com/docs/user-guide/cli) and the [Messaging Gateway guide](https://hermes-agent.nousresearch.com/docs/user-guide/messaging).
-
----
-
-## Documentation
-
-All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**:
-
-| Section                                                                                             | What's Covered                                             |
-| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart)                 | Install → setup → first conversation in 2 minutes          |
-| [CLI Usage](https://hermes-agent.nousresearch.com/docs/user-guide/cli)                              | Commands, keybindings, personalities, sessions             |
-| [Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration)                | Config file, providers, models, all options                |
-| [Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging)                | Telegram, Discord, Slack, WhatsApp, Signal, Home Assistant |
-| [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security)                          | Command approval, DM pairing, container isolation          |
-| [Tools & Toolsets](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)            | 40+ tools, toolset system, terminal backends               |
-| [Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)              | Procedural memory, Skills Hub, creating skills             |
-| [Memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)                     | Persistent memory, user profiles, best practices           |
-| [MCP Integration](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp)               | Connect any MCP server for extended capabilities           |
-| [Cron Scheduling](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron)              | Scheduled tasks with platform delivery                     |
-| [Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files)       | Project context that shapes every conversation             |
-| [Architecture](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture)             | Project structure, agent loop, key classes                 |
-| [Contributing](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing)             | Development setup, PR process, code style                  |
-| [CLI Reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands)                  | All commands and flags                                     |
-| [Environment Variables](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | Complete env var reference                                 |
-
----
-
-## Migrating from OpenClaw
-
-If you're coming from OpenClaw, Hermes can automatically import your settings, memories, skills, and API keys.
-
-**During first-time setup:** The setup wizard (`hermes setup`) automatically detects `~/.openclaw` and offers to migrate before configuration begins.
-
-**Anytime after install:**
+Ensure your local LLM server (e.g. Ollama or vLLM) is running with DeepSeek models:
 
 ```bash
-hermes claw migrate              # Interactive migration (full preset)
-hermes claw migrate --dry-run    # Preview what would be migrated
-hermes claw migrate --preset user-data   # Migrate without secrets
-hermes claw migrate --overwrite  # Overwrite existing conflicts
+# Example with Ollama:
+ollama pull deepseek-coder-v2:lite
+ollama pull deepseek-v2.5
 ```
 
-What gets imported:
+Configure models per profile:
+```bash
+hermes -p manager model set deepseek-v4-flash
+hermes -p backend model set deepseek-flash
+hermes -p frontend model set deepseek-flash
+hermes -p researcher model set deepseek-flash
+hermes -p reviewer model set deepseek-flash
+```
 
-- **SOUL.md** — persona file
-- **Memories** — MEMORY.md and USER.md entries
-- **Skills** — user-created skills → `~/.hermes/skills/openclaw-imports/`
-- **Command allowlist** — approval patterns
-- **Messaging settings** — platform configs, allowed users, working directory
-- **API keys** — allowlisted secrets (Telegram, OpenRouter, OpenAI, Anthropic, ElevenLabs)
-- **TTS assets** — workspace audio files
-- **Workspace instructions** — AGENTS.md (with `--workspace-target`)
+### Setting Up Agent Profiles
 
-See `hermes claw migrate --help` for all options, or use the `openclaw-migration` skill for an interactive agent-guided migration with dry-run previews.
+ForgeAI stores agent personalities in `agent-profiles/`:
+
+```bash
+# Setup profiles
+for role in manager backend frontend researcher reviewer; do
+  hermes profile create $role
+  cp agent-profiles/$role/SOUL.md ~/.hermes/profiles/$role/SOUL.md
+  cp agent-profiles/$role/profile.yaml ~/.hermes/profiles/$role/config.yaml
+done
+```
+
+### Starting the Gateway & Dashboard
+
+```bash
+# Start or restart the multiplexed daemon for all profiles
+hermes gateway restart --all
+
+# Verify active profiles
+hermes profile list
+
+# Launch the ForgeAI Web Dashboard
+hermes dashboard
+# Dashboard available at http://localhost:1618
+```
 
 ---
 
-## Contributing
+## Example End-to-End Workflow
 
-We welcome contributions! See the [Contributing Guide](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) for development setup, code style, and PR process.
+Here is how a real engineering workflow runs in ForgeAI:
 
-Start with the [PM developer workflow](website/docs/reference/package-management.md#developer-workflow)
-for activation, daily use, dependency changes, and leaving the environment.
-[Development Setup](CONTRIBUTING.md#development-setup) covers the separate test environment and verification commands.
+1. **Manager assigns high-level task:**
+   ```
+   "Build a responsive PC compatibility builder with wattage calculation and benchmark predictions."
+   ```
+
+2. **Manager creates a Kanban board and decomposes:**
+   ```bash
+   hermes kanban boards create rigforge-feature
+   hermes kanban boards switch rigforge-feature
+   ```
+   - **Card 1:** Research hardware TDP & socket compat rules (`researcher`)
+   - **Card 2:** Implement compatibility & power algorithms in TypeScript (`backend`)
+   - **Card 3:** Build UI stepper, catalog, and responsive cards (`frontend`, blocked by Card 2)
+   - **Card 4:** Security & performance review (`reviewer`, blocked by Card 2 & 3)
+
+3. **Specialists execute in parallel or sequentially according to dependencies.**
+4. **Manager inspects code diffs and test results, verifies browser rendering, and presents the completed product to the user.**
 
 ---
 
-## Community
+## Dispatch Protocol
 
-- 💬 [Discord](https://discord.gg/NousResearch)
-- 📚 [Skills Hub](https://agentskills.io)
-- 🐛 [Issues](https://github.com/NousResearch/hermes-agent/issues)
-- 🔌 [computer-use-linux](https://github.com/avifenesh/computer-use-linux) — Linux desktop-control MCP server for Hermes and other MCP hosts, with AT-SPI accessibility trees, Wayland/X11 input, screenshots, and compositor window targeting.
-- 🔌 [HermesClaw](https://github.com/AaronWong1999/hermesclaw) — Community WeChat bridge: Run Hermes Agent and OpenClaw on the same WeChat account.
+Every brief dispatched by the Manager to a specialist is completely self-contained:
+
+```text
+1. GOAL         — Concrete deliverable outcome in 1-2 sentences.
+2. DELIVERABLE  — Files, patches, test runs, or benchmark reports to return.
+3. INPUTS       — Absolute filesystem paths, schemas, or relevant code sections.
+4. CONSTRAINTS  — Languages, versions, lint rules, styling conventions.
+5. EVIDENCE     — Mandatory command execution output or browser verification logs.
+```
+
+---
+
+## Repository Structure
+
+```
+ForegeAI/
+├── agent-profiles/               # 5 specialized agent personas & configurations
+│   ├── manager/                 # Fleet orchestrator profile
+│   ├── backend/                 # Server-side engineering profile
+│   ├── frontend/                # UI/UX engineering profile
+│   ├── researcher/              # Reconnaissance & doc analysis profile
+│   └── reviewer/                # Code review & security audit profile
+├── demo-apps/                    # Showcase applications built with ForgeAI
+│   ├── pc-builder/              # RIGFORGE — React + Vite PC builder
+│   ├── earth-3d/                # Three.js 3D Earth photorealistic globe
+│   ├── shooter-game/            # NeonStrike — Arena raycast 3D FPS
+│   ├── pacman-game/             # Chomp! — 4-ghost AI arcade maze
+│   ├── flipkart-clone/          # MegaCart — Full-featured e-commerce
+│   ├── phone-store/             # PhoneHub — Smartphone boutique
+│   ├── agri-store/              # AgriFresh — Organic agriculture marketplace
+│   ├── vintage-store/           # Maison Rétro — Vintage apparel store
+│   └── webroot/                 # Unified portal serving all live apps
+├── web/                          # ForgeAI Web Dashboard (React + Vite)
+│   ├── src/
+│   │   ├── themes/presets.ts    # "ForgeAI Black" signature theme
+│   │   ├── i18n/en.ts           # Branding & localization
+│   │   └── App.tsx              # Main dashboard application
+│   └── index.html               # ForgeAI - Dashboard entry point
+├── hermes_cli/                   # Core CLI, gateway service & Kanban engine
+├── docs/                         # In-depth architectural & project documentation
+│   └── forgeai_project_document.md
+├── hermes-agent-architecture.svg # Visual system architecture
+├── pyproject.toml                # Python package metadata & dependencies
+└── package.json                  # Node.js tooling & dependencies
+```
+
+---
+
+## Tech Stack
+
+| Component | Technology | Description |
+|---|---|---|
+| **Agent Framework** | Hermes Core Agent Engine | Tool orchestration, context management, memory loops |
+| **Local LLMs** | DeepSeek V4 Flash / DeepSeek Flash | Local inference with zero cloud dependencies |
+| **Gateway Daemon** | Systemd Multiplexed Service | Manages simultaneous multi-profile agents |
+| **Web Dashboard** | React 18, Vite, TypeScript | Modern UI with pure-black theme & real-time telemetry |
+| **Task Management** | Built-in Kanban Engine | Dependency graph tracking, task cards, lifecycle states |
+| **Showcase Applications** | React, Three.js, Canvas, TypeScript | Full applications developed end-to-end by ForgeAI |
+| **Runtimes** | Python 3.11+, Node.js 18+ | Primary backend and frontend environments |
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
-Built by [Nous Research](https://nousresearch.com).
+This project is licensed under the [MIT License](LICENSE).

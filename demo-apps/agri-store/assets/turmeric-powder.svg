@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Turmeric powder in a bowl">
+  <title>Turmeric powder in a bowl</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#fff5cf"/>
+      <stop offset="1" stop-color="#f0cd5d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <path d="M126 172 h148 c0 36 -33 57 -74 57 s-74 -21 -74 -57 z" fill="#fff8e2" stroke="#d3c096" stroke-width="3"/>
+  <path d="M148 172 c8 -28 30 -44 52 -44 s44 16 52 44 z" fill="#e9b92e"/>
+  <g fill="#d9a41c" opacity="0.85">
+    <ellipse cx="176" cy="196" rx="10" ry="6"/>
+    <ellipse cx="206" cy="202" rx="11" ry="6"/>
+    <ellipse cx="234" cy="194" rx="9" ry="6"/>
+    <ellipse cx="196" cy="176" rx="9" ry="5"/>
+  </g>
+  <g fill="#e08a2a" stroke="#b96c17" stroke-width="3">
+    <ellipse cx="308" cy="196" rx="16" ry="26" transform="rotate(-18 308 196)"/>
+    <ellipse cx="330" cy="176" rx="13" ry="22" transform="rotate(16 330 176)"/>
+  </g>
+</svg>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgriFresh — Farm-Fresh Grains, Pulses, Spices &amp; Oils, Delivered</title>
+<meta name="description" content="AgriFresh sources unpolished pulses, stone-ground atta, cold-pressed oils and single-origin spices straight from Indian farmer collectives. Free delivery on orders above Rs 999.">
+<meta name="theme-color" content="#1d4a2a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4a2a'/%3E%3Cpath d='M16 25V12' stroke='%23e89a33' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M16 13c0-5 3.5-8 9-8 0 5-3.5 8-9 8z' fill='%234fae62'/%3E%3Cpath d='M16 17c-4.5 0-8-3-8-8 5.5 0 8 3 8 8z' fill='%236fc47f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#shop">Skip to products</a>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+
+    <a class="brand" href="#home" aria-label="AgriFresh — back to top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="34" height="34" focusable="false">
+          <rect width="32" height="32" rx="9" fill="#1d4a2a"/>
+          <path d="M16 25V12" stroke="#e89a33" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 13c0-5 3.5-8 9-8 0 5-3.5 8-9 8z" fill="#4fae62"/>
+          <path d="M16 17c-4.5 0-8-3-8-8 5.5 0 8 3 8 8z" fill="#6fc47f"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong data-brand>AgriFresh</strong>
+        <small data-brand-tagline>Farm to family</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="search">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.5 16.5 21 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input id="searchInput" type="search" autocomplete="off" placeholder="Search rice, dal, honey…"
+             aria-label="Search products by name, category or description">
+      <button id="searchClear" class="search-clear" type="button" aria-label="Clear search"
+              onclick="AgriFresh.clearSearch()" hidden>&times;</button>
+    </div>
+
+    <div class="header-tools">
+      <button class="cart-btn" id="cartBtn" type="button" onclick="AgriFresh.openCart()"
+              aria-label="Open cart, 0 items">
+        <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true">
+          <path d="M5 7h14l-1.3 12.1A2 2 0 0 1 15.7 21H8.3a2 2 0 0 1-2-1.9L5 7z"
+                fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+          <path d="M9 7V6a3 3 0 0 1 6 0v1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+        <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" type="button" onclick="AgriFresh.toggleNav()"
+              aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Direct from Indian farms</p>
+        <h1>Real food, grown the way nature intended.</h1>
+        <p class="lede">
+          Stone-ground atta, unpolished pulses, wood-pressed oils and single-origin spices —
+          sourced from farmer collectives across India and delivered to your kitchen.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#shop">Shop the harvest</a>
+          <a class="btn btn-ghost btn-lg" href="#about">Our story</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>18,400+</strong><span>families served</span></li>
+          <li><strong>240</strong><span>partner farms</span></li>
+          <li><strong>4.6&#9733;</strong><span>average rating</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-art">
+        <svg class="hero-svg" viewBox="0 0 560 460" role="img"
+             aria-label="Illustration of green farmland terraces at sunrise with wheat stalks">
+          <defs>
+            <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f8f2e0"/>
+              <stop offset="1" stop-color="#e9f5e5"/>
+            </linearGradient>
+            <linearGradient id="heroHillBack" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#a8d5a2"/><stop offset="1" stop-color="#7cbd82"/>
+            </linearGradient>
+            <linearGradient id="heroHillMid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#63ab6d"/><stop offset="1" stop-color="#3f8a53"/>
+            </linearGradient>
+            <linearGradient id="heroHillFront" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2f7d47"/><stop offset="1" stop-color="#1d4a2a"/>
+            </linearGradient>
+            <radialGradient id="heroSun" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#ffd88a"/>
+              <stop offset="0.65" stop-color="#f0a83c"/>
+              <stop offset="1" stop-color="#e89a33" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <rect width="560" height="460" rx="30" fill="url(#heroSky)"/>
+          <circle cx="410" cy="120" r="120" fill="url(#heroSun)" opacity="0.55"/>
+          <circle cx="410" cy="120" r="52" fill="#f5c15c"/>
+
+          <g fill="#ffffff" opacity="0.85">
+            <ellipse cx="140" cy="88" rx="46" ry="24"/>
+            <ellipse cx="178" cy="76" rx="34" ry="20"/>
+            <ellipse cx="108" cy="78" rx="28" ry="16"/>
+          </g>
+
+          <path d="M0 268 Q120 196 250 246 Q360 288 560 226 L560 460 L0 460 Z" fill="url(#heroHillBack)"/>
+          <path d="M0 318 Q140 254 288 300 Q420 342 560 290 L560 460 L0 460 Z" fill="url(#heroHillMid)"/>
+          <path d="M0 372 Q160 322 320 362 Q450 394 560 356 L560 460 L0 460 Z" fill="url(#heroHillFront)"/>
+
+          <g stroke="#ffffff" stroke-width="3" opacity="0.28" fill="none" stroke-linecap="round">
+            <path d="M28 410 q60 -20 120 -6"/>
+            <path d="M300 424 q70 -18 132 -4"/>
+            <path d="M120 442 q80 -16 150 -2"/>
+          </g>
+
+          <g transform="translate(150 300)">
+            <path d="M0 78 C-2 40 2 8 0 -22" stroke="#a8802c" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <g fill="#f0c05a" stroke="#c9922c" stroke-width="2">
+              <ellipse cx="0" cy="-30" rx="9" ry="19"/>
+              <ellipse cx="-13" cy="-8" rx="10" ry="18" transform="rotate(-30 -13 -8)"/>
+              <ellipse cx="13" cy="-8" rx="10" ry="18" transform="rotate(30 13 -8)"/>
+              <ellipse cx="-13" cy="20" rx="10" ry="18" transform="rotate(-32 -13 20)"/>
+              <ellipse cx="13" cy="20" rx="10" ry="18" transform="rotate(32 13 20)"/>
+              <ellipse cx="-14" cy="48" rx="10" ry="18" transform="rotate(-34 -14 48)"/>
+              <ellipse cx="14" cy="48" rx="10" ry="18" transform="rotate(34 14 48)"/>
+            </g>
+          </g>
+
+          <g transform="translate(470 330) scale(0.82) rotate(12)">
+            <path d="M0 78 C-2 40 2 8 0 -22" stroke="#a8802c" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <g fill="#f0c05a" stroke="#c9922c" stroke-width="2">
+              <ellipse cx="0" cy="-30" rx="9" ry="19"/>
+              <ellipse cx="-13" cy="-6" rx="10" ry="18" transform="rotate(-30 -13 -6)"/>
+              <ellipse cx="13" cy="-6" rx="10" ry="18" transform="rotate(30 13 -6)"/>
+              <ellipse cx="-13" cy="24" rx="10" ry="18" transform="rotate(-32 -13 24)"/>
+              <ellipse cx="13" cy="24" rx="10" ry="18" transform="rotate(32 13 24)"/>
+            </g>
+          </g>
+
+          <g transform="translate(300 358)">
+            <path d="M-46 60 Q0 24 46 60 Q0 82 -46 60 Z" fill="#c98a3f"/>
+            <path d="M-46 60 Q0 40 46 60" fill="none" stroke="#a06a28" stroke-width="3"/>
+            <circle cx="-22" cy="48" r="13" fill="#e0573c"/>
+            <circle cx="0" cy="40" r="14" fill="#f2a83a"/>
+            <circle cx="24" cy="48" r="13" fill="#c6d94a"/>
+            <circle cx="-8" cy="56" r="12" fill="#9ccb58"/>
+            <circle cx="12" cy="58" r="11" fill="#eec13f"/>
+            <path d="M0 34 c-2 -14 4 -24 16 -28 c0 14 -6 24 -16 28 z" fill="#4f9a45"/>
+          </g>
+        </svg>
+
+        <div class="hero-chip hero-chip-a" aria-hidden="true">
+          <strong>100%</strong><span>Pesticide-free</span>
+        </div>
+        <div class="hero-chip hero-chip-b" aria-hidden="true">
+          <strong>&#8377;999+</strong><span>Free delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= VALUE PROPS ============================= -->
+  <section class="value-props" aria-labelledby="propsTitle">
+    <h2 id="propsTitle" class="visually-hidden">Why buy from AgriFresh</h2>
+    <div class="wrap props-grid">
+
+      <article class="prop">
+        <span class="prop-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M12 10c0-4 2.8-6.5 7.5-6.5C19.5 7.5 16.7 10 12 10z" fill="currentColor"/>
+            <path d="M12 14c-3.6 0-6.5-2.4-6.5-6.5C10 7.5 12 9.9 12 14z" fill="currentColor" opacity="0.75"/>
+          </svg>
+        </span>
+        <h3>Farm Fresh</h3>
+        <p>Milled, pressed and packed within days of harvest — never warehoused for seasons.</p>
+      </article>
+
+      <article class="prop">
+        <span class="prop-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3z"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8.8 12.2 11 14.4l4.4-4.6" fill="none" stroke="currentColor" stroke-width="2.1"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Pesticide-Free</h3>
+        <p>Residue-tested at the source. No chemical ripening, no colour, no polish.</p>
+      </article>
+
+      <article class="prop">
+        <span class="prop-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <circle cx="12" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M4.5 20.5c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Direct from Farmers</h3>
+        <p>80 paise of every rupee reaches the grower. No middlemen, no commission agents.</p>
+      </article>
+
+      <article class="prop">
+        <span class="prop-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M2.5 7.5h11v9h-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M13.5 10.5h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="6.5" cy="18" r="1.9" fill="currentColor"/>
+            <circle cx="16.5" cy="18" r="1.9" fill="currentColor"/>
+          </svg>
+        </span>
+        <h3>Pan-India Delivery</h3>
+        <p>Dispatched from three regional hubs, reaching 19,000 pin codes in 2–6 days.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================= SHOP ============================= -->
+  <section class="section" id="shop">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">The pantry</p>
+          <h2>Shop our harvest</h2>
+        </div>
+        <label class="sort-wrap">
+          <span class="field-label">Sort by</span>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low &#8594; High</option>
+            <option value="price-desc">Price: High &#8594; Low</option>
+            <option value="name-asc">Name: A &#8594; Z</option>
+            <option value="rating-desc">Rating: High &#8594; Low</option>
+          </select>
+        </label>
+      </header>
+
+      <div class="chips" id="categoryChips" role="group" aria-label="Filter products by category"></div>
+
+      <p class="result-meta" id="resultMeta" role="status" aria-live="polite"></p>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <svg viewBox="0 0 24 24" width="46" height="46" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M16.5 16.5 21 21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h3>No products found</h3>
+        <p id="emptyText">Try a different search or category.</p>
+        <button class="btn btn-primary" type="button" onclick="AgriFresh.clearFilters()">Clear all filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section class="section section-alt" id="about">
+    <div class="wrap about-grid">
+      <div class="about-art">
+        <svg viewBox="0 0 420 380" role="img" aria-label="Illustration of a farmstead with a barn and fields">
+          <defs>
+            <linearGradient id="aboutSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f7f1e0"/><stop offset="1" stop-color="#eaf4e5"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="380" rx="26" fill="url(#aboutSky)"/>
+          <circle cx="318" cy="86" r="40" fill="#f5c15c"/>
+          <path d="M0 250 Q110 208 220 240 Q320 268 420 236 L420 380 L0 380 Z" fill="#8cc78f"/>
+          <path d="M0 300 Q120 266 240 292 Q340 314 420 288 L420 380 L0 380 Z" fill="#3f8a53"/>
+          <g stroke="#ffffff" stroke-width="3" opacity="0.25" fill="none" stroke-linecap="round">
+            <path d="M40 344 q70 -14 140 -2"/>
+            <path d="M220 360 q70 -12 140 -2"/>
+          </g>
+          <g transform="translate(120 150)">
+            <path d="M0 40 60 0 120 40 V132 H0 Z" fill="#c98a3f" stroke="#9c6626" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M-8 42 60 -2 128 42" fill="none" stroke="#7d4f1c" stroke-width="7" stroke-linecap="round"/>
+            <rect x="44" y="76" width="32" height="56" rx="4" fill="#7d4f1c"/>
+            <rect x="14" y="62" width="22" height="22" rx="3" fill="#f4e3c2"/>
+            <rect x="84" y="62" width="22" height="22" rx="3" fill="#f4e3c2"/>
+          </g>
+          <g transform="translate(300 268) scale(0.7)">
+            <path d="M0 78 C-2 40 2 8 0 -22" stroke="#a8802c" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <g fill="#f0c05a" stroke="#c9922c" stroke-width="2">
+              <ellipse cx="0" cy="-30" rx="9" ry="19"/>
+              <ellipse cx="-13" cy="-4" rx="10" ry="18" transform="rotate(-30 -13 -4)"/>
+              <ellipse cx="13" cy="-4" rx="10" ry="18" transform="rotate(30 13 -4)"/>
+              <ellipse cx="-13" cy="28" rx="10" ry="18" transform="rotate(-32 -13 28)"/>
+              <ellipse cx="13" cy="28" rx="10" ry="18" transform="rotate(32 13 28)"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">Our story</p>
+        <h2>From a twelve-acre plot in Ratnagiri to eighteen thousand kitchens</h2>
+        <p>
+          AgriFresh began in 2016 when three families pooled their mango orchards and a single pickup
+          truck. We were tired of watching good produce get blended into anonymity at the mandi —
+          so we started packing it ourselves, under our own name, and shipping it straight to the people
+          who eat it.
+        </p>
+        <p>
+          Today we work with 240 smallholder farms across eleven states. Every lot is traceable to the
+          village it came from, every price is agreed before sowing, and every farmer is paid within
+          seven days of dispatch — not sixty.
+        </p>
+        <ul class="tick-list">
+          <li>Fixed, pre-agreed prices so growers can plan a season</li>
+          <li>No chemical ripening, polishing, colouring or blending</li>
+          <li>Lab residue reports available for every lot on request</li>
+          <li>Reusable jute and tin packaging on bulk orders</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TESTIMONIALS ============================= -->
+  <section class="section" id="testimonials">
+    <div class="wrap">
+      <header class="section-head section-head-center">
+        <div>
+          <p class="eyebrow">Kind words</p>
+          <h2>What our customers say</h2>
+        </div>
+      </header>
+
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            <p>The toor dal actually smells like dal. I had forgotten that was a thing — my mother
+            noticed it before I did. Two years in and we have not bought pulses from a supermarket since.</p>
+          </blockquote>
+          <figcaption>
+            <strong>Meera Raghavan</strong>
+            <span>Home cook, Bengaluru</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote">
+          <div class="stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            <p>We run a 90-cover kitchen and switched our groundnut oil and chilli powder to AgriFresh
+            six months ago. Consistent lot to lot, and the bulk pricing beat our old distributor.</p>
+          </blockquote>
+          <figcaption>
+            <strong>Chef Arjun Nair</strong>
+            <span>Kumarakom Table, Kochi</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote">
+          <div class="stars" aria-label="Rated 4 out of 5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <blockquote>
+            <p>Ordered 25 kg atta and 5 L coconut oil on a Tuesday, had it in Guwahati by Saturday.
+            Packaging was intact, nothing leaked, and the WhatsApp order took me two minutes.</p>
+          </blockquote>
+          <figcaption>
+            <strong>Bhaskar Das</strong>
+            <span>Retail buyer, Guwahati</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CONTACT ============================= -->
+  <section class="section section-alt" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Talk to a human</h2>
+        <p class="lede-sm">
+          Wholesale enquiries, bulk pricing, traceability reports or a problem with an order —
+          we answer within one working day. For same-day help, call us.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="19" height="19">
+                <path d="M5 4h4l2 5-2.4 1.6a12.5 12.5 0 0 0 5.2 5.2L15.5 13l5 2v4a1.5 1.5 0 0 1-1.7 1.5A16.5 16.5 0 0 1 3.5 5.7 1.5 1.5 0 0 1 5 4z"
+                      fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div><span class="ci-label">Phone</span><a href="tel:+919999999999">+91 99999 99999</a></div>
+          </li>
+          <li>
+            <span class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="19" height="19">
+                <rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/>
+                <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div><span class="ci-label">Email</span><a href="mailto:hello@agrifresh.example">hello@agrifresh.example</a></div>
+          </li>
+          <li>
+            <span class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="19" height="19">
+                <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.9"/>
+                <circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/>
+              </svg>
+            </span>
+            <div><span class="ci-label">Warehouse</span>
+              <address>Plot 12, APMC Market Yard,<br>Gultekdi, Pune, Maharashtra 411037</address></div>
+          </li>
+          <li>
+            <span class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="19" height="19">
+                <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.9"/>
+                <path d="M12 7v5.3l3.4 2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div><span class="ci-label">Hours</span><span>Mon–Sat, 9:00 am – 7:00 pm IST</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="card form" id="contactForm" novalidate onsubmit="AgriFresh.submitContact(event)">
+        <h3>Send us a message</h3>
+        <p class="form-note">This is a demo form — nothing leaves your browser.</p>
+
+        <div class="field">
+          <label for="ctName">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input id="ctName" name="name" type="text" autocomplete="name" aria-describedby="ctNameErr" required>
+          <p class="field-error" id="ctNameErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="ctEmail">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="ctEmail" name="email" type="email" autocomplete="email" aria-describedby="ctEmailErr" required>
+          <p class="field-error" id="ctEmailErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="ctPhone">Phone <span class="opt">(optional)</span></label>
+          <input id="ctPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="ctPhoneErr">
+          <p class="field-error" id="ctPhoneErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="ctMessage">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="ctMessage" name="message" rows="4" aria-describedby="ctMessageErr" required></textarea>
+          <p class="field-error" id="ctMessageErr" role="alert" hidden></p>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-text">
+        <strong data-brand>AgriFresh</strong>
+        <small data-brand-tagline>Farm to family</small>
+      </span>
+      <p>Honest food from Indian soil, delivered without the middlemen.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Shop links">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#shop">All products</a></li>
+        <li><a href="#shop">Grains &amp; pulses</a></li>
+        <li><a href="#shop">Oils &amp; spices</a></li>
+        <li><a href="#shop">Seasonal fruit</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Company links">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">Our story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Wholesale</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h4>Reach us</h4>
+      <ul>
+        <li><a href="tel:+919999999999">+91 99999 99999</a></li>
+        <li><a href="mailto:hello@agrifresh.example">hello@agrifresh.example</a></li>
+        <li>APMC Market Yard, Pune 411037</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-base">
+    <p>&copy; <span id="year">2026</span> <span data-brand>AgriFresh</span>. A demonstration storefront — no payments are processed.</p>
+    <p class="footer-legal"><a href="#about">Terms</a><a href="#about">Privacy</a><a href="#contact">Shipping</a></p>
+  </div>
+</footer>
+
+<!-- ============================= OVERLAY ============================= -->
+<div class="overlay" id="overlay" hidden onclick="AgriFresh.closeAll()"></div>
+
+<!-- ============================= CART DRAWER ============================= -->
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true"
+       aria-labelledby="cartTitle" aria-hidden="true">
+  <header class="drawer-head">
+    <h2 id="cartTitle">Your cart <span class="drawer-count" id="cartItemCount">0 items</span></h2>
+    <button class="icon-btn" type="button" onclick="AgriFresh.closeCart()" aria-label="Close cart">&times;</button>
+  </header>
+
+  <div class="drawer-body" id="cartItems"></div>
+
+  <div class="cart-empty" id="cartEmpty">
+    <svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true">
+      <path d="M5 7h14l-1.3 12.1A2 2 0 0 1 15.7 21H8.3a2 2 0 0 1-2-1.9L5 7z"
+            fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <h3>Your cart is empty</h3>
+    <p>Add a few staples and they will show up here.</p>
+    <button class="btn btn-primary" type="button" onclick="AgriFresh.closeCart(); AgriFresh.scrollToShop();">Browse products</button>
+  </div>
+
+  <footer class="drawer-foot" id="cartFoot">
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd id="sumSubtotal">&#8377;0</dd></div>
+      <div><dt>Delivery</dt><dd id="sumDelivery">&#8377;0</dd></div>
+      <div class="totals-grand"><dt>Total</dt><dd id="sumTotal">&#8377;0</dd></div>
+    </dl>
+    <p class="delivery-hint" id="deliveryHint"></p>
+    <button class="btn btn-primary btn-block" type="button" onclick="AgriFresh.openCheckout()">
+      Proceed to checkout
+    </button>
+    <p class="drawer-note">No online payment. Your enquiry is sent to us on WhatsApp and we confirm stock and freight before dispatch.</p>
+  </footer>
+</aside>
+
+<!-- ============================= PRODUCT MODAL ============================= -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" aria-hidden="true" hidden>
+  <h2 id="pmTitle" class="visually-hidden">Product details</h2>
+  <div class="modal-backdrop" onclick="AgriFresh.closeProduct()"></div>
+  <div class="modal-panel modal-panel-wide" id="pmPanel"></div>
+</div>
+
+<!-- ============================= CHECKOUT MODAL ============================= -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="coTitle" aria-hidden="true" hidden>
+  <div class="modal-backdrop" onclick="AgriFresh.closeCheckout()"></div>
+  <div class="modal-panel">
+    <button class="icon-btn modal-close" type="button" onclick="AgriFresh.closeCheckout()" aria-label="Close checkout">&times;</button>
+
+    <h2 id="coTitle">Confirm your order</h2>
+    <p class="form-note">Fill in your details and we will open a pre-filled WhatsApp message. No payment is taken on this site.</p>
+
+    <div class="checkout-grid">
+      <form class="form" id="checkoutForm" novalidate onsubmit="AgriFresh.placeOrder(event)">
+        <div class="field">
+          <label for="coName">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="coName" name="name" type="text" autocomplete="name" aria-describedby="coNameErr" required>
+          <p class="field-error" id="coNameErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="coPhone">WhatsApp / mobile number <span class="req" aria-hidden="true">*</span></label>
+          <input id="coPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                 placeholder="98765 43210" aria-describedby="coPhoneErr" required>
+          <p class="field-error" id="coPhoneErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="coAddress">Delivery address <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="coAddress" name="address" rows="3" autocomplete="street-address"
+                    placeholder="House / street, area, city, state, PIN" aria-describedby="coAddressErr" required></textarea>
+          <p class="field-error" id="coAddressErr" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="coNotes">Order notes <span class="opt">(optional)</span></label>
+          <textarea id="coNotes" name="notes" rows="2"
+                    placeholder="Preferred delivery window, pack sizes, GST details…"></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="placeOrderBtn">
+          Place order on WhatsApp
+        </button>
+        <p class="drawer-note">WhatsApp number placeholder: +91 99999 99999. Nothing is transmitted from this page.</p>
+      </form>
+
+      <aside class="order-summary" aria-label="Order summary">
+        <h3>Order summary</h3>
+        <div class="summary-items" id="coSummaryItems"></div>
+        <dl class="totals">
+          <div><dt>Subtotal</dt><dd id="coSubtotal">&#8377;0</dd></div>
+          <div><dt>Delivery</dt><dd id="coDelivery">&#8377;0</dd></div>
+          <div class="totals-grand"><dt>Total</dt><dd id="coTotal">&#8377;0</dd></div>
+        </dl>
+        <a class="summary-wa is-disabled" id="placeOrderLink" aria-disabled="true" rel="noopener">Open the WhatsApp link &#8599;</a>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= TOASTS ============================= -->
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="false"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

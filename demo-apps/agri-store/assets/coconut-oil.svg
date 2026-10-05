@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Bottle of coconut oil with a coconut">
+  <title>Bottle of coconut oil with a coconut</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#eef7f4"/>
+      <stop offset="1" stop-color="#bce1d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <path d="M182 118 h34 v16 c16 12 26 28 26 46 v46 a12 12 0 0 1 -12 12 h-62 a12 12 0 0 1 -12 -12 v-46 c0 -18 10 -34 26 -46 z"
+        fill="#d8ede5" stroke="#7fb3a4" stroke-width="3"/>
+  <rect x="188" y="92" width="22" height="28" rx="5" fill="#6d9d8f"/>
+  <rect x="176" y="178" width="46" height="36" rx="7" fill="#ffffff" opacity="0.8"/>
+  <circle cx="300" cy="192" r="36" fill="#8a5a2b" stroke="#6d4520" stroke-width="3"/>
+  <circle cx="300" cy="192" r="25" fill="#fdf6e8"/>
+  <ellipse cx="292" cy="184" rx="8" ry="5" fill="#ffffff" opacity="0.8"/>
+  <path d="M276 158 q10 -18 30 -20" stroke="#5f8f4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

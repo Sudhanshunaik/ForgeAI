@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NEONSTRIKE — Arena FPS</title>
+  <meta name="description" content="NEONSTRIKE — a fast-paced browser arena FPS. Deathmatch against bots: race to 20 eliminations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23070b16'/><circle cx='50' cy='50' r='26' fill='none' stroke='%2300f0c0' stroke-width='6'/><path d='M50 12v22M50 66v22M12 50h22M66 50h22' stroke='%23ff3860' stroke-width='6'/></svg>">
+</head>
+<body>
+
+<div class="game-shell" id="shell">
+  <!-- ===== 3D viewport ===== -->
+  <canvas id="game"></canvas>
+
+  <!-- ===== HUD ===== -->
+  <div class="hud" id="hud">
+    <!-- Top bar -->
+    <div class="hud-top">
+      <div class="score-pill you">
+        <span class="tag">YOU</span>
+        <span class="val" id="hud-you">0</span>
+      </div>
+      <div class="match-box">
+        <div class="match-mode">ARENA DEATHMATCH</div>
+        <div class="match-target">FIRST TO <b id="hud-target">20</b></div>
+        <div class="timer" id="hud-timer">00:00</div>
+      </div>
+      <div class="score-pill bots">
+        <span class="tag">BOTS</span>
+        <span class="val" id="hud-bots">0</span>
+      </div>
+      <canvas class="minimap" id="minimap" width="164" height="164"></canvas>
+    </div>
+
+    <!-- Kill feed -->
+    <div class="killfeed" id="killfeed"></div>
+
+    <!-- Hit marker -->
+    <div class="hitmarker" id="hitmarker">✕</div>
+
+    <!-- Center reticle -->
+    <div class="reticle" id="reticle">
+      <span class="r-dot"></span>
+      <span class="r-line r-t"></span><span class="r-line r-b"></span>
+      <span class="r-line r-l"></span><span class="r-line r-r"></span>
+    </div>
+
+    <!-- Damage vignette -->
+    <div class="damage-flash" id="damage-flash"></div>
+    <div class="low-hp" id="low-hp"></div>
+
+    <!-- Bottom bar -->
+    <div class="hud-bottom">
+      <div class="vitals">
+        <div class="hp-wrap">
+          <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
+          <div class="hp-num"><span id="hp-num">100</span><small>HP</small></div>
+        </div>
+        <div class="sprint-ind" id="sprint-ind">⚡ SPRINT</div>
+        <div class="dash-ind" id="dash-ind">⇢ DASH</div>
+      </div>
+      <div class="weapons" id="weapons"></div>
+      <div class="ammo-box">
+        <div class="ammo-num" id="ammo-num">12</div>
+        <div class="ammo-reserve" id="ammo-reserve">∞</div>
+        <div class="ammo-weapon" id="ammo-weapon">PULSE PISTOL</div>
+        <div class="reload-bar" id="reload-bar"><div class="reload-fill" id="reload-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Feed message (streaks etc.) -->
+    <div class="streak-msg" id="streak-msg"></div>
+  </div>
+
+  <!-- ===== Touch controls ===== -->
+  <div class="touch-ui" id="touch-ui">
+    <div class="stick-zone" id="stick-zone"><div class="stick-knob" id="stick-knob"></div></div>
+    <button class="touch-btn fire" id="btn-fire">FIRE</button>
+    <button class="touch-btn" id="btn-dash-t">DASH</button>
+    <button class="touch-btn" id="btn-swap-t">SWAP</button>
+  </div>
+
+  <!-- ===== Overlays ===== -->
+  <div class="overlay visible" id="ov-menu">
+    <div class="panel">
+      <h1>NEON<span>STRIKE</span></h1>
+      <p class="sub">BROWSER ARENA FPS — DEATHMATCH VS BOTS</p>
+      <button class="btn primary" id="btn-play">▶ ENTER THE ARENA</button>
+      <div class="menu-cols">
+        <div class="menu-col">
+          <h3>CONTROLS</h3>
+          <div class="row"><span class="kbd">W A S D</span> move</div>
+          <div class="row"><span class="kbd">MOUSE</span> aim</div>
+          <div class="row"><span class="kbd">CLICK</span> fire</div>
+          <div class="row"><span class="kbd">SHIFT</span> sprint</div>
+          <div class="row"><span class="kbd">SPACE</span> dash</div>
+          <div class="row"><span class="kbd">1 2 3</span> weapons</div>
+          <div class="row"><span class="kbd">R</span> reload</div>
+          <div class="row"><span class="kbd">ESC</span> pause</div>
+        </div>
+        <div class="menu-col">
+          <h3>OBJECTIVE</h3>
+          <p class="brief">
+            Race the bots to <b>20 eliminations</b>. They score when you fall.
+            Grab <span class="chip hp">+</span> health and <span class="chip am">▮</span> ammo crates around the arena.
+          </p>
+          <h3>SENSITIVITY</h3>
+          <input type="range" id="sens" min="0.3" max="3" step="0.1" value="1">
+          <div class="sens-val" id="sens-val">1.0×</div>
+        </div>
+      </div>
+      <p class="hint" id="menu-best">BEST TIME: —</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="ov-pause">
+    <div class="panel small">
+      <h2>PAUSED</h2>
+      <p class="sub">CLICK RESUME OR PRESS ESC</p>
+      <input type="range" id="sens2" min="0.3" max="3" step="0.1" value="1">
+      <div class="sens-val" id="sens2-val">1.0×</div>
+      <button class="btn primary" id="btn-resume">▶ RESUME</button>
+      <button class="btn" id="btn-quit">QUIT TO MENU</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="ov-end">
+    <div class="panel">
+      <h2 id="end-title">VICTORY</h2>
+      <p class="sub" id="end-sub">RACE COMPLETE</p>
+      <div class="stats" id="end-stats"></div>
+      <button class="btn primary" id="btn-again">↻ REMATCH</button>
+      <button class="btn" id="btn-menu">MENU</button>
+    </div>
+  </div>
+
+  <div class="overlay click-hint" id="ov-click">
+    <div class="click-inner">CLICK TO AIM &nbsp;⌖</div>
+  </div>
+</div>
+
+<script src="js/assets.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

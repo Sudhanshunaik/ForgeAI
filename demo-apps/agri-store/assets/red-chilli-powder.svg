@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Dried red chillies">
+  <title>Dried red chillies</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#ffe4dd"/>
+      <stop offset="1" stop-color="#f2a795"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <path d="M158 100 C182 138 212 158 244 168 C254 171 256 184 247 188 C214 197 172 178 155 141 C148 126 148 110 158 100 Z"
+        fill="#d8402c" stroke="#a42a18" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M252 116 C276 146 302 160 330 166 C339 168 341 180 332 184 C303 191 272 175 258 146 C251 132 246 124 252 116 Z"
+        fill="#c9371f" stroke="#94250f" stroke-width="3" stroke-linejoin="round" opacity="0.95"/>
+  <path d="M158 100 C150 88 152 78 162 72" stroke="#4f9a45" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M252 116 C248 104 252 94 262 90" stroke="#4f9a45" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <g fill="#e0573c" opacity="0.75">
+    <circle cx="196" cy="214" r="6"/><circle cx="222" cy="220" r="5"/>
+    <circle cx="248" cy="212" r="6"/><circle cx="278" cy="208" r="5"/>
+  </g>
+</svg>

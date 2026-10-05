@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Long-grain basmati rice">
+  <title>Long-grain basmati rice</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#eef7e8"/>
+      <stop offset="1" stop-color="#c2e0b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <g fill="#fffdf6" stroke="#cbbca0" stroke-width="2">
+    <ellipse cx="166" cy="148" rx="31" ry="12" transform="rotate(-28 166 148)"/>
+    <ellipse cx="214" cy="128" rx="31" ry="12" transform="rotate(18 214 128)"/>
+    <ellipse cx="238" cy="170" rx="31" ry="12" transform="rotate(-8 238 170)"/>
+    <ellipse cx="180" cy="186" rx="31" ry="12" transform="rotate(34 180 186)"/>
+    <ellipse cx="205" cy="154" rx="31" ry="12" transform="rotate(6 205 154)"/>
+  </g>
+  <path d="M120 214 q84 26 172 0" stroke="#c9b894" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+</svg>

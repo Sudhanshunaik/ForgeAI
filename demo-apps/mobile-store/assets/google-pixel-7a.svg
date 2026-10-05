@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" role="img" aria-label="Google Pixel 7a product image">
+  <defs>
+    <linearGradient id="bg9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338ca" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0d0d26" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="frame9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33334a"/><stop offset="1" stop-color="#15152a"/>
+    </linearGradient>
+    <linearGradient id="screen9" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#0d0d26"/><stop offset="1" stop-color="#4338ca"/>
+    </linearGradient>
+    <clipPath id="clip9"><rect x="100" y="50" width="200" height="420" rx="26"/></clipPath>
+  </defs>
+  <rect width="400" height="520" fill="url(#bg9)"/>
+  <ellipse cx="200" cy="486" rx="118" ry="16" fill="#000" fill-opacity="0.28"/>
+  <rect x="300" y="150" width="6" height="46" rx="3" fill="#9ca3af"/><rect x="300" y="212" width="6" height="30" rx="3" fill="#6b7280"/><rect x="94" y="160" width="6" height="60" rx="3" fill="#6b7280"/>
+  <rect x="88" y="38" width="224" height="444" rx="36" fill="#000" fill-opacity="0.35"/>
+  <rect x="91" y="41" width="218" height="438" rx="34" fill="url(#frame9)"/>
+  <rect x="100" y="50" width="200" height="420" rx="26" fill="url(#screen9)"/>
+  <g clip-path="url(#clip9)">
+    <circle cx="18" cy="70" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="70" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="70" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="70" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="70" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="114" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="114" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="114" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="114" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="114" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="158" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="158" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="158" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="158" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="158" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="202" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="202" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="202" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="202" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="202" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="246" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="246" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="246" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="246" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="246" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="290" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="290" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="290" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="290" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="290" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="18" cy="334" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="54" cy="334" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="90" cy="334" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="126" cy="334" r="6" fill="#818cf8" fill-opacity="0.35"/><circle cx="162" cy="334" r="6" fill="#818cf8" fill-opacity="0.35"/>
+    <rect x="22" y="62" width="52" height="76" rx="16" fill="#0b0b0f" fill-opacity="0.55"/><circle cx="48" cy="84" r="11" fill="#818cf8" fill-opacity="0.85"/><circle cx="48" cy="116" r="11" fill="#818cf8" fill-opacity="0.55"/>
+  </g>
+  <rect x="150" y="58" width="100" height="26" rx="13" fill="#05070d"/>
+  <rect x="152" y="418" width="96" height="4" rx="2" fill="#ffffff" fill-opacity="0.5"/>
+</svg>

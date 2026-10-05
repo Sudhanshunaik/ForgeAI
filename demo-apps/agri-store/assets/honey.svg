@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Jar of honey with a dipper">
+  <title>Jar of honey with a dipper</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#fff2d0"/>
+      <stop offset="1" stop-color="#efbc48"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <rect x="140" y="126" width="102" height="106" rx="16" fill="#eebc3f" stroke="#a8762a" stroke-width="3"/>
+  <rect x="154" y="102" width="74" height="26" rx="8" fill="#a8762a"/>
+  <rect x="150" y="166" width="82" height="36" rx="7" fill="#fff6d8" opacity="0.9"/>
+  <path d="M150 196 h82" stroke="#e0c886" stroke-width="2"/>
+  <rect x="302" y="86" width="9" height="98" rx="4" fill="#c98a3f"/>
+  <ellipse cx="306" cy="196" rx="24" ry="17" fill="#f0c04a" stroke="#c98a3f" stroke-width="3"/>
+  <g stroke="#c98a3f" stroke-width="2" opacity="0.8">
+    <path d="M284 194 v8 M294 190 v10 M306 189 v11 M318 190 v10 M328 194 v8"/>
+  </g>
+  <path d="M294 214 q-4 12 8 16" stroke="#f0c04a" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

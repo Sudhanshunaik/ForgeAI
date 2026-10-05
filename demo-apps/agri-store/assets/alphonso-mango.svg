@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Ripe alphonso mango">
+  <title>Ripe alphonso mango</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#fff0d6"/>
+      <stop offset="1" stop-color="#f5bf56"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <path d="M196 110 c42 -16 78 10 86 50 c8 42 -17 82 -55 90 c-36 8 -69 -15 -75 -53 C146 162 160 124 196 110 Z"
+        fill="#f2a83a" stroke="#cf8524" stroke-width="3"/>
+  <path d="M204 106 c-5 -19 6 -34 23 -40 c2 19 -6 34 -23 40 Z" fill="#4f9a45" stroke="#3b7a34" stroke-width="3"/>
+  <ellipse cx="222" cy="152" rx="19" ry="13" transform="rotate(-26 222 152)" fill="#f9c874" opacity="0.7"/>
+  <g fill="#e0891f" opacity="0.55">
+    <circle cx="196" cy="212" r="4"/><circle cx="216" cy="222" r="3"/><circle cx="232" cy="210" r="3"/>
+  </g>
+</svg>

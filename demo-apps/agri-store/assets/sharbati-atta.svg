@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Whole wheat stalk">
+  <title>Whole wheat stalk</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#f9f1dd"/>
+      <stop offset="1" stop-color="#e0ca97"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="320" cy="62" r="56" fill="#ffffff" opacity="0.22"/>
+  <circle cx="320" cy="62" r="32" fill="#ffffff" opacity="0.18"/>
+  <path d="M0 234 Q90 204 180 230 T400 222 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.09"/>
+  <path d="M0 258 Q110 232 210 252 T400 246 L400 300 L0 300 Z" fill="#2f6b3f" opacity="0.13"/>
+  <ellipse cx="204" cy="242" rx="92" ry="13" fill="#000000" opacity="0.06"/>
+  <path d="M200 232 C197 190 203 150 200 104" stroke="#a8802c" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <g fill="#e8b445" stroke="#b8872a" stroke-width="2">
+    <ellipse cx="200" cy="94" rx="13" ry="25"/>
+    <ellipse cx="183" cy="120" rx="14" ry="23" transform="rotate(-30 183 120)"/>
+    <ellipse cx="217" cy="120" rx="14" ry="23" transform="rotate(30 217 120)"/>
+    <ellipse cx="181" cy="156" rx="14" ry="23" transform="rotate(-32 181 156)"/>
+    <ellipse cx="219" cy="156" rx="14" ry="23" transform="rotate(32 219 156)"/>
+    <ellipse cx="183" cy="192" rx="14" ry="23" transform="rotate(-34 183 192)"/>
+    <ellipse cx="217" cy="192" rx="14" ry="23" transform="rotate(34 217 192)"/>
+  </g>
+</svg>

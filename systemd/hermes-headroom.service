@@ -1,0 +1,19 @@
+[Unit]
+Description=Hermes Headroom Context Optimization and Compression Proxy
+Documentation=https://github.com/NousResearch/hermes-agent
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/sudhanshunaik/Projects/Projects/Rescape Hermes/hermes-agent
+ExecStart=/usr/bin/python3 -m agent.headroom_proxy run --port 8787 --host 127.0.0.1
+Restart=always
+RestartSec=3
+KillMode=mixed
+KillSignal=SIGTERM
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

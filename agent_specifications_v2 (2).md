@@ -131,10 +131,11 @@ graph TD
     E -- "✅ Approve" --> H["Manager Unlocks Next Phase / Downstream Swarm"]
 ```
 
-### The 5 Defined Phase Gates
+### The Human-in-the-Loop Phase Gates
 
 | Phase Gate | Triggered After | Swarm Execution | Manager's Role to Human | What Blocks If Rejected |
 | :--- | :--- | :--- | :--- | :--- |
+| **Gate 0: Requirement Intake & Scope** | New task / project assignment | **Human & Engineering Manager** | Asks targeted clarifying questions (via `clarify` tool or structured Q&A) & locks scope brief | **Kanban creation & Tech Lead dispatch are blocked.** Prevents building the wrong architecture. |
 | **Gate 1: Architecture & Contract** | System design & API contract drafting | **System Architect** & **Tech Lead** | Presents ADR, API schema (`openapi.yaml`), and sequence diagrams | **All coding is blocked.** Backend and Frontend cannot write a single line of code. |
 | **Gate 2: Database Migration** | Schema migrations & indexing plans | **Database Engineer** | Presents SQL migrations, lock risk analysis, and rollback procedures | **Local/staging DB execution is blocked.** Prevents destructive schema locks. |
 | **Gate 3: Visual & UX Inspection** | Frontend component & layout completion | **Frontend Engineer** | Presents rendered UI screenshots across 3 viewports (Mobile, Tablet, Desktop) and a11y metrics | **PR submission is blocked.** Allows aesthetic and layout adjustments before review. |
@@ -218,12 +219,14 @@ human_review_status:
 | **Persistence** | **Always active.** The primary profile session (`profiles/manager`) that the human communicates with across CLI, TUI, Slack, Telegram, and the Mission Control Dashboard. |
 
 ### Concrete Actions
-- **Intake & Scope Definition:** Translates human requests into structured engineering briefs for the Tech Lead.
+- **Intake & Scope Clarification (Gate 0):** Interviews human on new tasks using `clarify` or structured questions to resolve tech stack, MVP boundaries, data strategy, and target directory before mobilizing the swarm.
 - **24/7 Context & Q&A:** Answers "Why did we do X?", explains code architectures, and checks sprint progress without disturbing developers.
 - **Gatekeeper for Phase Gates:** Packages technical deliverables into executive review modals for the human, gathers feedback, and instructs the Tech Lead on revisions.
 - **Backlog Ingestion:** Asynchronously logs future user feature ideas into the Backlog Ledger.
 
 ### Hard Boundaries — Does NOT:
+- ❌ **Create Kanban boards or individual engineering task cards.** The Kanban board MUST be created exclusively by the **Tech Lead** (`tech_lead`), who decomposes technical deliverables and assigns tickets to specialized agents.
+- ❌ Start execution or dispatch to Tech Lead without clarifying requirements and confirming scope first (Gate 0)
 - ❌ Write or edit code, CSS, or SQL
 - ❌ Issue direct orders to individual developers (Backend, Frontend) — routes through Tech Lead
 - ❌ Approve Phase Gates on its own (only the human can approve)
@@ -242,6 +245,7 @@ human_review_status:
 | **Persistence** | Always active during sprints. Spawned by Manager. |
 
 ### Concrete Actions
+- **Sole Creator and Manager of the Kanban Board:** Initializes the dedicated sprint board (`hermes kanban boards create <slug>`, `switch <slug>`), decomposes requirements into discrete cards, assigns each card to the appropriate domain specialist (`--assignee <specialist>`), links dependencies, and tracks progress across lifecycle states.
 - Assigns System Architect to author ADRs and OpenAPI contracts (Gate 1).
 - Decomposes requirements into parallel Git worktree tasks (Backend, Frontend, DB).
 - Arbitrates technical disagreements between developers and Code Reviewer.
@@ -251,6 +255,7 @@ human_review_status:
 - ❌ Communicate directly with the human (reports exclusively to Manager)
 - ❌ Write application code or CSS directly
 - ❌ Merge to trunk without Gate 4 human sign-off
+- ❌ Leave technical tasks on the Kanban board assigned to `tech_lead` (must assign/reassign to the domain specialist: `architect`, `database`, `backend`, `frontend`, `reviewer`, `security`, `qa`, `devops`, `docs`, `performance`)
 
 ---
 

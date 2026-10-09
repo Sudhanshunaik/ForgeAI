@@ -374,7 +374,7 @@ def start_server_foreground(port: int = DEFAULT_HEADROOM_PORT, host: str = DEFAU
     pid_file.write_text(str(os.getpid()), encoding="utf-8")
 
     logger.info("Headroom proxy listening on http://%s:%d", host, port)
-    print(f"⚡ Headroom context optimization proxy running on http://{host}:{port}")
+    print(f"⚡ Headroom context optimization proxy running on http://{host}:{port}", flush=True)
 
     def _shutdown_handler(signum, frame):
         logger.info("Shutting down Headroom proxy...")
@@ -408,6 +408,7 @@ def start_headroom_daemon(port: int = DEFAULT_HEADROOM_PORT, host: str = DEFAULT
 
     cmd = [
         sys.executable,
+        "-u",
         "-m",
         "agent.headroom_proxy",
         "run",
@@ -458,11 +459,29 @@ def stop_headroom_daemon(port: int = DEFAULT_HEADROOM_PORT) -> bool:
     return False
 
 
-def ensure_headroom_running(port: int = DEFAULT_HEADROOM_PORT, host: str = DEFAULT_HEADROOM_HOST) -> bool:
+def ensure_headroom_running(
+    port: Optional[int] = None,
+    host: Optional[str] = None,
+) -> bool:
     """Ensure Headroom proxy is active in the background. Called on Hermes startup."""
-    if is_headroom_running(port, host):
+    target_port = port if port is not None else DEFAULT_HEADROOM_PORT
+    target_host = host if host is not None else DEFAULT_HEADROOM_HOST
+
+    try:
+        from hermes_cli.config import load_config_readonly
+        cfg = load_config_readonly().get("headroom", {}) or {}
+        if not cfg.get("enabled", True) or not cfg.get("auto_start", True):
+            return False
+        if port is None and "port" in cfg:
+            target_port = int(cfg["port"])
+        if host is None and "host" in cfg:
+            target_host = str(cfg["host"])
+    except Exception:
+        pass
+
+    if is_headroom_running(target_port, target_host):
         return True
-    return start_headroom_daemon(port, host)
+    return start_headroom_daemon(target_port, target_host)
 
 
 def main() -> None:

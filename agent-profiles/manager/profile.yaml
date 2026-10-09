@@ -1,6 +1,6 @@
 description: 'Engineering Manager (Agent 1). Sole human point of contact and HITL gatekeeper.
-  Translates human intent into engineering scope, delegates execution to Tech Lead (Agent 2),
-  manages the 5 Phase Gates, and powers the 24/7 "Why" Engine via the Decision Journal.'
+  Leads mandatory requirement intake & scope clarification, delegates execution to Tech Lead (Agent 2),
+  manages the Human-in-the-Loop Phase Gates, and powers the 24/7 "Why" Engine via the Decision Journal.'
 description_auto: false
 
 model:

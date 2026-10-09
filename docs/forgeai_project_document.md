@@ -179,29 +179,30 @@ ForgeAI ships with **5 agent profiles**, each with a distinct SOUL (personality,
 
 ## 4. Kanban Board Workflow
 
-> **Core Invariant:** *ALWAYS create a new Kanban board whenever multiple agents work together.*
+> **Core Invariants:**
+> 1. *The Kanban board MUST be created by the Tech Lead (`tech_lead`) only.* The Engineering Manager clarifies requirements with the human (Gate 0) and passes the locked brief to the Tech Lead; the Manager does NOT create boards or task cards.
+> 2. *The Tech Lead decides technical task decomposition and assigns all tasks to specialized domain agents.* Technical tasks MUST NEVER be left assigned to `tech_lead`.
 
 The Kanban system is the backbone of ForgeAI's multi-agent coordination. It ensures transparency, dependency tracking, and lifecycle management across the fleet.
 
 ### When to Create a Board
 
-| Scenario | Board Required? |
-|---|---|
-| Manager answers a question directly | ❌ No |
-| Manager + 1 specialist | ✅ Yes |
-| Manager + multiple specialists | ✅ Yes |
-| Any cross-domain collaboration | ✅ Yes |
+| Scenario | Board Required? | Who Creates the Board? |
+|---|---|---|
+| Manager answers a question directly | ❌ No | N/A |
+| Tech Lead mobilizing technical swarm | ✅ Yes | **Tech Lead only** |
+| Cross-domain multi-agent collaboration | ✅ Yes | **Tech Lead only** |
 
 ### Board Lifecycle
 
 ```mermaid
 flowchart LR
-    A["Create Board"] --> B["Decompose Tasks"]
-    B --> C["Assign to Agents"]
+    A["Tech Lead Creates Board"] --> B["Decompose Subtasks"]
+    B --> C["Assign to Specialized Agents"]
     C --> D["Link Dependencies"]
-    D --> E["Execute"]
-    E --> F["Review"]
-    F --> G["Done"]
+    D --> E["Execute in Worktrees"]
+    E --> F["Review & Verify"]
+    F --> G["Package Deliverable"]
 
     style A fill:#1a1a2e,stroke:#e94560,color:#fff
     style B fill:#1a1a2e,stroke:#e94560,color:#fff
@@ -212,19 +213,43 @@ flowchart LR
     style G fill:#1a1a2e,stroke:#16c79a,color:#fff
 ```
 
-### Commands
+### Commands (Executed by Tech Lead)
 
 ```bash
-# Create a new board
+# Create a new dedicated sprint board (Tech Lead only)
 hermes kanban boards create feature-auth
 
 # Switch to the board
 hermes kanban boards switch feature-auth
 
-# Create a task card
+# Create discrete task cards assigned to domain specialists (NEVER all to tech_lead):
+# Gate 1: Architecture & Contract
 hermes kanban create --title "Design REST API schema" \
   --body "Define endpoints for /auth/login, /auth/register with JWT" \
+  --assignee architect
+
+# Gate 2: Database Migration
+hermes kanban create --title "Users & Auth DB Migration" \
+  --body "Draft SQL migration for users and sessions tables" \
+  --assignee database
+
+# Gate 3: Backend API & Business Logic
+hermes kanban create --title "Implement Auth Endpoints" \
+  --body "Implement POST /auth/login and /auth/register with password hashing" \
   --assignee backend
+
+# Gate 3: Frontend UI Components
+hermes kanban create --title "Build Login & Register UI" \
+  --body "Implement auth forms and capture 3-viewport screenshots" \
+  --assignee frontend
+
+# Gate 4: Adversarial Review, Security & QA
+hermes kanban create --title "Adversarial Code Review" --body "Audit diffs and write failing tests" --assignee reviewer
+hermes kanban create --title "Security Audit" --body "Check JWT entropy and scan for vulnerabilities" --assignee security
+hermes kanban create --title "Chaos & Mutation Tests" --body "Run mutation suite and edge cases" --assignee qa
+
+# Gate 5: Deployment & Release
+hermes kanban create --title "Staging Canary Deployment" --body "Canary release and 5-min soak" --assignee devops
 
 # Link dependencies (frontend blocked by backend API)
 hermes kanban link <parent_id> <child_id>

@@ -57,3 +57,20 @@ def test_is_headroom_running_mock():
 
         # Should be detected as responsive via socket probe
         assert is_headroom_running(DEFAULT_HEADROOM_PORT) is True
+
+
+def test_ensure_headroom_running_already_running():
+    from agent.headroom_proxy import ensure_headroom_running
+    with patch("agent.headroom_proxy.is_headroom_running", return_value=True):
+        assert ensure_headroom_running() is True
+
+
+def test_ensure_headroom_running_disabled_by_config():
+    from agent.headroom_proxy import ensure_headroom_running
+    mock_config = MagicMock()
+    mock_config.load_config_readonly.return_value = {"headroom": {"enabled": False}}
+    with patch.dict("sys.modules", {"hermes_cli.config": mock_config}):
+        assert ensure_headroom_running() is False
+
+
+

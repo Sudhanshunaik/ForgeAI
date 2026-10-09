@@ -1,0 +1,8 @@
+description: 'Security Engineer (Agent 7). Red team specialist. Conducts STRIDE threat
+  modeling, automated vulnerability scanning (semgrep, gitleaks, audit), and IDOR/entropy
+  audits. Feeds Phase Gate 4: Code & Security Merge.'
+description_auto: false
+
+model:
+  default: "deepseek-v4-flash"
+  provider: "deepseek"

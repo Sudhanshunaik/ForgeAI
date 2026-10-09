@@ -9,7 +9,7 @@ import { ProfileGlyph } from '@/components/ui/profile-glyph'
 import { getProfileSoul, type ProfileInfo, updateProfileSoul } from '@/hermes'
 import { useI18n } from '@/i18n'
 import { displayPath } from '@/lib/display-path'
-import { AlertTriangle, Save } from '@/lib/icons'
+import { AlertTriangle, Save, ShieldLock } from '@/lib/icons'
 import { resolveProfileColor } from '@/lib/profile-color'
 import { normalize } from '@/lib/text'
 import { notify, notifyError } from '@/store/notifications'
@@ -33,6 +33,7 @@ import {
 
 import { CreateProfileDialog } from './create-profile-dialog'
 import { DeleteProfileDialog } from './delete-profile-dialog'
+import { PermissionsEditor } from './permissions-editor'
 import { RenameProfileDialog } from './rename-profile-dialog'
 
 interface ProfilesViewProps {
@@ -226,6 +227,7 @@ function ProfileRow({
 function ProfileDetail({ profile }: { profile: ProfileInfo }) {
   const { t } = useI18n()
   const p = t.profiles
+  const [tab, setTab] = useState<'soul' | 'permissions'>('soul')
 
   return (
     <PanelDetail>
@@ -260,9 +262,33 @@ function ProfileDetail({ profile }: { profile: ProfileInfo }) {
             { label: p.skillsLabel, value: profile.skill_count }
           ]}
         />
+
+        <div className="flex items-center gap-1 border-b border-border/40 pb-2 pt-1">
+          <Button
+            size="sm"
+            variant={tab === 'soul' ? 'secondary' : 'ghost'}
+            className="h-7 text-xs font-medium"
+            onClick={() => setTab('soul')}
+          >
+            SOUL.md
+          </Button>
+          <Button
+            size="sm"
+            variant={tab === 'permissions' ? 'secondary' : 'ghost'}
+            className="h-7 text-xs font-medium"
+            onClick={() => setTab('permissions')}
+          >
+            <ShieldLock className="mr-1 size-3 text-muted-foreground" />
+            Permissions & Governance
+          </Button>
+        </div>
       </header>
 
-      <SoulEditor profileName={profile.name} />
+      {tab === 'soul' ? (
+        <SoulEditor profileName={profile.name} />
+      ) : (
+        <PermissionsEditor profileName={profile.name} />
+      )}
     </PanelDetail>
   )
 }

@@ -1,4 +1,8 @@
-description: Code review specialist. Audits code and diffs for correctness, security,
-  regressions, and maintainability. Returns findings ranked by severity with file
-  and line references.
+description: 'Code Reviewer (Agent 5). Adversarial quality gate. Reports to Tech Lead.
+  Audits diffs across 5 axes and writes failing tests proving defects before requiring
+  fixes. Feeds Phase Gate 4 sign-off. Uses an alternative model family.'
 description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

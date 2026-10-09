@@ -45,7 +45,7 @@ from starlette.concurrency import run_in_threadpool
 from hermes_cli.web_models import (
     ProfileCreate, ProfileActiveUpdate, ProfileExport, ProfileImport, ProfileRename,
     ProfileSoulUpdate, ProfileDescriptionUpdate, ProfileModelUpdate, ProfileDescribeAuto,
-    SessionPrScanBody)
+    ProfilePermissionsUpdate, SessionPrScanBody)
 from hermes_cli.web_server_profiles import _config_profile_scope, _hermes_home_scope
 
 # Same logger the handlers used before extraction (identical logger object).
@@ -1023,6 +1023,29 @@ async def update_profile_soul(name: str, body: ProfileSoulUpdate):
         _log.exception("PUT /api/profiles/%s/soul failed", name)
         raise HTTPException(status_code=500, detail=f"Could not write SOUL.md: {e}")
     return {"ok": True}
+
+
+@router.get("/api/profiles/{name}/permissions")
+async def get_profile_permissions(name: str):
+    """Retrieve the access control permission rules for a profile."""
+    from agent.permissions import load_profile_permissions
+    profile_dir = _resolve_profile_dir(name)
+    rules = await run_in_threadpool(load_profile_permissions, profile_dir)
+    return {"ok": True, "permissions": [r.to_dict() for r in rules]}
+
+
+@router.put("/api/profiles/{name}/permissions")
+async def update_profile_permissions(name: str, body: ProfilePermissionsUpdate):
+    """Update access control permission rules for a profile."""
+    from agent.permissions import PermissionRule, save_profile_permissions
+    profile_dir = _resolve_profile_dir(name)
+    rules = [PermissionRule.from_dict(r.model_dump()) for r in body.permissions]
+    try:
+        await run_in_threadpool(save_profile_permissions, profile_dir, rules)
+    except Exception as exc:
+        _log.exception("PUT /api/profiles/%s/permissions failed", name)
+        raise HTTPException(status_code=500, detail=f"Could not save permissions: {exc}")
+    return {"ok": True, "permissions": [r.to_dict() for r in rules]}
 
 
 @router.put("/api/profiles/{name}/description")

@@ -1,6 +1,8 @@
 import type {
+  PermissionRule,
   ProfileCreatePayload,
   ProfileDesktopOverlay,
+  ProfilePermissionsResponse,
   ProfileSetupCommand,
   ProfileSoul,
   ProfilesResponse
@@ -78,6 +80,26 @@ export function updateProfileSoul(name: string, content: string, scope?: Profile
     path: `/api/profiles/${encodeURIComponent(name)}/soul`,
     method: 'PUT',
     body: { content }
+  })
+}
+
+export function getProfilePermissions(name: string, scope?: ProfileScope): Promise<ProfilePermissionsResponse> {
+  return hermesApi<ProfilePermissionsResponse>({
+    ...profileOwnerScoped(scope),
+    path: `/api/profiles/${encodeURIComponent(name)}/permissions`
+  })
+}
+
+export function updateProfilePermissions(
+  name: string,
+  permissions: PermissionRule[],
+  scope?: ProfileScope
+): Promise<{ count: number; name: string; ok: boolean }> {
+  return hermesApi<{ count: number; name: string; ok: boolean }>({
+    ...profileOwnerScoped(scope),
+    path: `/api/profiles/${encodeURIComponent(name)}/permissions`,
+    method: 'PUT',
+    body: { permissions }
   })
 }
 

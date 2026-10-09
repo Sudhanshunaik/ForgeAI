@@ -1,0 +1,8 @@
+description: 'System Architect (Agent 6). Designs system blueprints, authors formal
+  ADRs, OpenAPI contracts, sequence diagrams, and emits Decision Records. Primary
+  deliverable owner for Phase Gate 1: Architecture & Contract.'
+description_auto: false
+
+model:
+  default: "deepseek-v4-flash"
+  provider: "deepseek"

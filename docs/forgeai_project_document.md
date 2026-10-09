@@ -274,22 +274,12 @@ hermes setup
 Each agent runs as an independent Hermes profile with its own SOUL, config, and model assignment.
 
 ```bash
-# Create the specialist profiles
-hermes profile create backend
-hermes profile create frontend
-hermes profile create researcher
-hermes profile create reviewer
-hermes profile create manager
-```
-
-Copy the SOUL files from the `profiles/` directory in this repo to each profile's home:
-
-```bash
-# Example for the backend agent
-cp profiles/backend/SOUL.md ~/.hermes/profiles/backend/SOUL.md
-cp profiles/backend/config.yaml ~/.hermes/profiles/backend/config.yaml
-
-# Repeat for frontend, researcher, reviewer, manager
+# Create the 12 sovereign engineering profiles + auxiliary researcher
+for role in manager tech_lead backend frontend reviewer architect security qa devops database docs performance researcher; do
+  hermes profile create $role
+  cp agent-profiles/$role/SOUL.md ~/.hermes/profiles/$role/SOUL.md
+  cp agent-profiles/$role/profile.yaml ~/.hermes/profiles/$role/config.yaml
+done
 ```
 
 ### Configuring Local LLMs

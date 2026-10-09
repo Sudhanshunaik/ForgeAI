@@ -459,6 +459,14 @@ class ProfileImport(BaseModel):
 class ProfileSoulUpdate(BaseModel):
     content: str
 
+class PermissionRuleModel(BaseModel):
+    action: str  # read, edit, shell, subagent, web, *
+    resource: str  # path glob, command pattern, agent id, *
+    effect: Literal["allow", "ask", "deny"] = "allow"
+
+class ProfilePermissionsUpdate(BaseModel):
+    permissions: List[PermissionRuleModel] = []
+
 class ProfileActiveUpdate(BaseModel):
     name: str
 

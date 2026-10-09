@@ -697,6 +697,14 @@ DEFAULT_CONFIG = {
         # guards. Example: 1800 = 30 min.
         "idle_compact_after_seconds": 0,
     },
+    # Headroom context optimization and compression layer. Runs local HTTP proxy (port 8787)
+    # in the background while Hermes is running to optimize context and reduce token costs.
+    "headroom": {
+        "enabled": True,
+        "port": 8787,
+        "host": "127.0.0.1",
+        "auto_start": True,
+    },
     # Anthropic prompt caching (Claude via OpenRouter or native API). cache_ttl: "5m" | "1h" | "auto"
     # (auto = 1h for human-paced sessions — cli/tui/desktop/messaging — and 5m for subagent, cron,
     # oneshot, webhook, kanban, api, tool, batch); other non-falsy values are ignored; falsy (false, null, "off",

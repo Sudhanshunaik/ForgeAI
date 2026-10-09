@@ -3028,6 +3028,12 @@ def _prepare_agent_startup(args) -> None:
                 "plugin discovery failed at CLI startup",
                 exc_info=True,
             )
+
+    try:
+        from agent.headroom_proxy import ensure_headroom_running
+        ensure_headroom_running()
+    except Exception as _hr_err:
+        logger.debug("Headroom auto-start check: %s", _hr_err)
     # -t/--toolsets narrows which configured MCP servers get spawned, on
     # every discovery path (inline below, background thread, TUI/desktop
     # deferred start). Built-in toolset names never match a server key, so
@@ -3547,6 +3553,9 @@ def _build_cli_parser():
     build_gui_parser(subparsers, cmd_gui=cmd_gui)
     build_logs_parser(subparsers, cmd_logs=cmd_logs)
     build_prompt_size_parser(subparsers, cmd_prompt_size=cmd_prompt_size)
+
+    from hermes_cli.subcommands.headroom import build_headroom_parser
+    build_headroom_parser(subparsers)
     return parser, subparsers
 
 

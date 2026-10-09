@@ -798,6 +798,34 @@ def _pre_dispatch_guards(function_name: str, function_args: Dict[str, Any], skip
         logger.debug("ACP edit approval guard error: %s", _edit_approval_err)
         if function_name in {"write_file", "patch"}:
             return function_args, (tool_error("Edit approval denied: approval guard failed"), "edit_approval_error", None)
+
+    # Granular profile access control policy guard
+    try:
+        from hermes_constants import get_hermes_home
+        from agent.permissions import (
+            load_profile_permissions,
+            extract_tool_action_and_resource,
+            evaluate_permission,
+        )
+        home_path = get_hermes_home()
+        rules = load_profile_permissions(home_path)
+        if rules:
+            action, resource = extract_tool_action_and_resource(function_name, function_args)
+            effect, winning_rule = evaluate_permission(rules, action, resource)
+            if effect == "deny":
+                err_msg = f"Permission denied: action '{action}' on resource '{resource}' is blocked by profile policy."
+                return function_args, (tool_error(err_msg), "permission_denied", err_msg)
+            elif effect == "ask":
+                from tools.approval import request_tool_approval
+                rule_desc = f"Profile policy asks confirmation for action '{action}' on '{resource}'"
+                rule_key = f"perm:{action}:{resource}"
+                res = request_tool_approval(function_name, rule_desc, rule_key=rule_key)
+                if not res.get("approved"):
+                    err_msg = res.get("message") or f"Action '{action}' on resource '{resource}' was not approved."
+                    return function_args, (tool_error(err_msg), "permission_rejected", err_msg)
+    except Exception as _perm_err:
+        logger.debug("Profile permission guard error: %s", _perm_err)
+
     return function_args, None
 
 

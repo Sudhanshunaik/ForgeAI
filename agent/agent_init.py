@@ -2505,6 +2505,11 @@ def init_agent(
     _clamp_compressor_to_ollama_num_ctx(agent)
     _emit_compression_summary(agent, cs)
     _snapshot_primary_runtime(agent)
+    try:
+        from agent.headroom_proxy import ensure_headroom_running
+        ensure_headroom_running()
+    except Exception as _hr_err:
+        logger.debug("Headroom auto-start in agent_init: %s", _hr_err)
 
 
 __all__ = ["init_agent"]

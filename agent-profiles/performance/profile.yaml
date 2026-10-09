@@ -1,0 +1,8 @@
+description: 'Performance Analyst (Agent 12). Guards performance budgets. Tracks bundle
+  sizes, CPU benchmarks, and latency deltas to prevent regressions before production.
+  Feeds Gate 3 and Gate 4 sign-off.'
+description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

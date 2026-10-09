@@ -1,0 +1,8 @@
+description: 'Database Engineer (Agent 10). Data custodian. Owns schema normalization,
+  SQL migrations, index optimization, lock risk analysis, and rollback procedures.
+  Primary deliverable owner for Phase Gate 2: Database Migration.'
+description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

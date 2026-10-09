@@ -1,0 +1,8 @@
+description: 'QA Engineer (Agent 8). Chaos and edge-case testing specialist.
+  Authors mutation tests, integration suites, and chaos injection scenarios (corrupted
+  tokens, race conditions, network failures). Feeds Phase Gate 4 sign-off.'
+description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

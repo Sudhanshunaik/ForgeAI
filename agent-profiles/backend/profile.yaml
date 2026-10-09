@@ -1,4 +1,8 @@
-description: 'Backend specialist. Builds and maintains server-side code: APIs, data
-  models, business logic, auth, background jobs, database integrations, and query
-  correctness. Defines and publishes the API contract.'
+description: 'Backend Engineer (Agent 3). Builds resilient server-side code: APIs,
+  data models, auth, and business logic. Works in isolated Git worktrees and enforces
+  OpenAPI contract compliance with defensive Zod/Pydantic validation.'
 description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

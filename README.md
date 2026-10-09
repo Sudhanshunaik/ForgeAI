@@ -260,8 +260,8 @@ hermes -p reviewer model set deepseek-flash
 ForgeAI stores agent personalities in `agent-profiles/`:
 
 ```bash
-# Setup profiles
-for role in manager backend frontend researcher reviewer; do
+# Setup profiles for the Sovereign AI Engineering Team
+for role in manager tech_lead backend frontend reviewer architect security qa devops database docs performance researcher; do
   hermes profile create $role
   cp agent-profiles/$role/SOUL.md ~/.hermes/profiles/$role/SOUL.md
   cp agent-profiles/$role/profile.yaml ~/.hermes/profiles/$role/config.yaml

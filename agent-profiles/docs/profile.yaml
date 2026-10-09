@@ -1,0 +1,8 @@
+description: 'Documentation Engineer (Agent 11). Eliminates documentation drift. Keeps
+  API specs, READMEs, environment examples, and architecture docs synchronized with
+  actual merged code.'
+description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

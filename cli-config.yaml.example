@@ -834,6 +834,18 @@ compression:
   # auxiliary section below (auxiliary.compression.provider / model).
 
 # =============================================================================
+# Headroom Context Optimization Proxy (optional)
+# =============================================================================
+# Headroom runs a local compression proxy (http://127.0.0.1:8787) in the background
+# while Hermes is running. It compresses conversation history, reduces verbose
+# tool outputs, and aligns KV cache prefixes.
+headroom:
+  enabled: true       # Run Headroom proxy when Hermes runs (default: true)
+  port: 8787          # Port to listen on (default: 8787)
+  host: "127.0.0.1"   # Host to bind to
+  auto_start: true    # Automatically launch proxy daemon on Hermes startup
+
+# =============================================================================
 # Tool-result budget (optional)
 # =============================================================================
 # Controls when a large tool result is spilled to disk (full output saved to

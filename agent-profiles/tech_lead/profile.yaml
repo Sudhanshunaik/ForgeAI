@@ -1,0 +1,12 @@
+description: 'Tech Lead (Agent 2). Technical swarm commander. Decomposes engineering
+  requirements, coordinates parallel Git worktrees, arbitrates technical disputes,
+  and packages milestone deliverables for the Engineering Manager.'
+description_auto: false
+
+model:
+  default: "deepseek-v4-flash"
+  provider: "deepseek"
+
+delegation:
+  model: "deepseek-flash"
+  provider: "deepseek"

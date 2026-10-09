@@ -1,0 +1,8 @@
+description: 'DevOps / SRE (Agent 9). Infrastructure and release specialist. Owns CI/CD,
+  staging canary deployments, health soak monitoring, and automated rollbacks. Primary
+  deliverable owner for Phase Gate 5: Release & Deployment.'
+description_auto: false
+
+model:
+  default: "deepseek-flash"
+  provider: "deepseek"

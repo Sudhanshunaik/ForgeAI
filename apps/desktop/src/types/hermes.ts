@@ -1164,6 +1164,20 @@ export interface ProfileSoul {
   exists: boolean
 }
 
+export type PermissionAction = 'read' | 'edit' | 'shell' | 'subagent' | 'web' | '*'
+export type PermissionEffect = 'allow' | 'ask' | 'deny'
+
+export interface PermissionRule {
+  action: PermissionAction | string
+  resource: string
+  effect: PermissionEffect
+}
+
+export interface ProfilePermissionsResponse {
+  name: string
+  permissions: PermissionRule[]
+}
+
 export interface ProfilesResponse {
   profiles: ProfileInfo[]
 }

@@ -1,5 +1,12 @@
-description: Manager / orchestrator. Decomposes incoming work and dispatches it to
-  specialist agents (researcher, backend, frontend, devops, reviewer) via 'hermes
-  -p <agent> chat -q', then verifies and integrates their results. Answers trivial
-  asks directly without fan-out.
+description: 'Engineering Manager (Agent 1). Sole human point of contact and HITL gatekeeper.
+  Translates human intent into engineering scope, delegates execution to Tech Lead (Agent 2),
+  manages the 5 Phase Gates, and powers the 24/7 "Why" Engine via the Decision Journal.'
 description_auto: false
+
+model:
+  default: "deepseek-v4-flash"
+  provider: "deepseek"
+
+delegation:
+  model: "deepseek-flash"
+  provider: "deepseek"
